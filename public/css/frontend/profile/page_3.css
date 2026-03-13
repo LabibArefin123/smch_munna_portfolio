@@ -1,0 +1,195 @@
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* =========================================
+   Banner Section
+========================================= */
+
+.doctor-banner {
+    height: 260px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.doctor-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0, 64, 128, 0.85),
+        rgba(0, 128, 128, 0.7)
+    );
+}
+
+.breadcrumb-custom {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 12px 25px;
+    border-radius: 30px;
+    backdrop-filter: blur(8px);
+    color: #fff;
+    font-size: 15px;
+}
+
+.breadcrumb-custom span {
+    margin: 0 8px;
+    color: #fff;
+}
+
+.doc-link {
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.doc-link:hover {
+    color: #ffd700;
+}
+
+/* =========================================
+   Profile Section
+========================================= */
+
+.doctor-profile {
+    padding: 80px 0;
+}
+
+.doctor-card {
+    background: #ffffff;
+    max-width: 1400px;
+    margin: -100px auto 0;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 3;
+}
+/* =========================================
+   Content Styling
+========================================= */
+
+.doctor-name {
+    font-size: 32px;
+    font-weight: 700;
+    color: #004080;
+    margin-bottom: 10px;
+}
+
+.doctor-degree {
+    font-size: 18px;
+    color: #008080;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #004080;
+    border-left: 4px solid #008080;
+    padding-left: 12px;
+    margin-bottom: 15px;
+}
+/* =========================================
+   Journal Publication – Professional Styling
+========================================= */
+
+.journal-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 25px;
+}
+
+.journal-list li {
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    border-left: 5px solid #008080;
+    background: #ffffff;
+    /* border-radius: 12px; */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    transition: all 0.3s ease;
+    line-height: 1.6;
+}
+
+.journal-list li:hover {
+    background: #f0faff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.journal-list li strong {
+    display: block;
+    color: #004080;
+    font-weight: 700;
+    font-size: 15.8px;
+    margin-bottom: 5px;
+}
+
+.journal-list li em {
+    display: block;
+    color: #555555;
+    font-style: italic;
+    font-size: 14.5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.journal-link {
+    color: #008080;
+    text-decoration: underline;
+    word-break: break-word;
+    font-size: 14.5px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.journal-link:hover {
+    color: #004080;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .journal-list li {
+        padding: 18px 20px;
+    }
+    .journal-list li strong {
+        font-size: 15px;
+    }
+    .journal-list li em,
+    .journal-link {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .journal-list li {
+        padding: 15px 15px;
+    }
+    .journal-list li strong {
+        font-size: 14px;
+    }
+    .journal-list li em,
+    .journal-link {
+        font-size: 13px;
+    }
+}

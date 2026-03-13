@@ -1,0 +1,297 @@
+/* =========================================
+   Educational Background – Professional UI
+========================================= */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* =========================================
+   Banner Section
+========================================= */
+
+.doctor-banner {
+    height: 260px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.doctor-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0, 64, 128, 0.85),
+        rgba(0, 128, 128, 0.7)
+    );
+}
+
+.breadcrumb-custom {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 12px 25px;
+    border-radius: 30px;
+    backdrop-filter: blur(8px);
+    color: #fff;
+    font-size: 15px;
+}
+
+.breadcrumb-custom span {
+    margin: 0 8px;
+    color: #fff;
+}
+
+.doc-link {
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.doc-link:hover {
+    color: #ffd700;
+}
+
+/* =========================================
+   Profile Section
+========================================= */
+
+.doctor-profile {
+    padding: 80px 0;
+}
+
+.doctor-card {
+    background: #ffffff;
+    max-width: 1400px;
+    margin: -100px auto 0;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 3;
+}
+
+/* =========================================
+   Content Styling
+========================================= */
+
+.doctor-name {
+    font-size: 32px;
+    font-weight: 700;
+    color: #004080;
+    margin-bottom: 10px;
+}
+
+.doctor-degree {
+    font-size: 18px;
+    color: #008080;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #004080;
+    border-left: 4px solid #008080;
+    padding-left: 12px;
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   Education Tables – Fixed Equal Layout
+========================================= */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.edu-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* 🔥 IMPORTANT – Equal column control */
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Equal Column Width */
+.edu-table th,
+.edu-table td {
+    width: auto;
+    word-wrap: break-word;
+}
+
+/* Header */
+.edu-table thead {
+    background: linear-gradient(90deg, #004080, #008080);
+    color: #fff;
+}
+
+.edu-table thead th {
+    padding: 16px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.edu-table thead th:last-child {
+    border-right: none;
+}
+
+/* Body */
+.edu-table tbody td {
+    padding: 16px;
+    font-size: 14.5px;
+    border-bottom: 1px solid #f0f0f0;
+    border-right: 1px solid #f5f5f5;
+    vertical-align: middle;
+    text-align: center;
+    color: #444;
+}
+
+.edu-table tbody td:last-child {
+    border-right: none;
+}
+
+/* Zebra Striping */
+.edu-table tbody tr:nth-child(even) {
+    background-color: #f8fbff;
+}
+
+/* Hover */
+.edu-table tbody tr:hover {
+    background-color: #eaf4ff;
+    transition: 0.3s ease;
+}
+
+/* First Column (Serial) */
+.edu-table td:first-child {
+    font-weight: 600;
+    color: #004080;
+}
+
+/* Make long text readable */
+.edu-table td:nth-child(3),
+.edu-table td:nth-child(5) {
+    text-align: left;
+}
+
+/* =========================================
+   Responsive Fix
+========================================= */
+
+@media (max-width: 1200px) {
+    .edu-table {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .edu-table {
+        font-size: 13px;
+    }
+
+    .edu-table th,
+    .edu-table td {
+        padding: 10px;
+    }
+}
+
+/* Lists */
+.expertise-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.expertise-list li {
+    padding: 8px 0 8px 28px;
+    position: relative;
+    font-size: 15.5px;
+    color: #444;
+}
+
+.expertise-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    color: #008080;
+    font-weight: bold;
+}
+
+/* Paragraph Styling */
+.doctor-content p {
+    margin-bottom: 20px;
+    font-size: 15.8px;
+    color: #555;
+}
+
+/* =========================================
+   Hover Effects
+========================================= */
+
+.doctor-card:hover {
+    transform: translateY(-3px);
+    transition: 0.4s ease;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================
+   Responsive Design
+========================================= */
+
+@media (max-width: 992px) {
+    .doctor-card {
+        padding: 35px;
+    }
+
+    .doctor-name {
+        font-size: 26px;
+    }
+
+    .doctor-degree {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .doctor-banner {
+        height: 200px;
+    }
+
+    .doctor-card {
+        margin-top: -60px;
+        padding: 25px;
+    }
+
+    .doctor-name {
+        font-size: 22px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,136 @@
+.banner-section {
+    background-color: #f8fbfd;
+}
+/* =========================
+   SLIDER BASE
+========================= */
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    z-index: 1;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.doctor-slide {
+    height: 100%;
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    overflow: hidden;
+    position: relative;
+}
+
+/* =========================
+   TEXT CONTENT
+========================= */
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 15px;
+}
+
+.hero-content p:first-of-type {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.hero-content p:last-of-type {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* =========================
+   IMAGE STYLING
+========================= */
+
+.doctor-img {
+    position: absolute;
+    bottom: 0;
+    max-height: 90%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+.slide.active .doctor-img {
+    transform: translateY(-8px);
+}
+
+/* LEFT IMAGE */
+.doctor-img.left {
+    left: 10%;
+}
+
+/* RIGHT IMAGE */
+.doctor-img.right {
+    right: 10%;
+}
+
+/* Soft image shadow (professional look) */
+.doctor-image-link img {
+    filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.15));
+}
+
+/* =========================
+   DOTS
+========================= */
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #111;
+    transform: scale(1.2);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    #slider {
+        height: auto !important;
+        padding: 40px 0;
+    }
+
+    .doctor-img {
+        position: static;
+        max-height: 280px;
+        margin: 30px auto 0;
+        display: block;
+    }
+
+    .hero-content {
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+}

@@ -1,0 +1,87 @@
+/* ===============================
+   PORTFOLIO TOP BAR
+================================ */
+
+.portfolio-topbar {
+    background: #111;
+    color: #eee;
+    font-size: 13px;
+    padding: 8px 0;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+}
+
+.top-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.divider {
+    opacity: 0.4;
+}
+
+.top-link {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.top-link:hover {
+    opacity: 0.7;
+}
+
+/* Social icons */
+.top-social {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 14px;
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-2px);
+    opacity: 0.7;
+}
+
+/* Language Button */
+.lang-btn {
+    background: #fff;
+    color: #111;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .top-info {
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+
+    .portfolio-topbar .container {
+        flex-direction: column;
+    }
+}
