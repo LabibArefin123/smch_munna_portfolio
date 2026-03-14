@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'Dr. Asif Almas Haque | Best Colorectal Surgeon in Bangladesh')
+@section('title', 'Dr. Mohammad Faisal Ibn Kabir | Best Colorectal Surgeon in Bangladesh')
 
 @section('meta')
     <meta name="description"

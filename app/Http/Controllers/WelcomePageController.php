@@ -24,6 +24,11 @@ class WelcomePageController extends Controller
         return view('frontend.about');
     }
 
+    public function service()
+    {
+        return view('frontend.service');
+    }
+
     public function profile_page_1()
     {
         return view('frontend.profile.page_1');

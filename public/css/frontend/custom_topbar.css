@@ -1,10 +1,10 @@
 /* ===============================
-   PORTFOLIO TOP BAR
+   PROFESSIONAL TOP BAR
 ================================ */
 
 .portfolio-topbar {
-    background: #111;
-    color: #eee;
+    background: #0f172a;
+    color: #fff;
     font-size: 13px;
     padding: 8px 0;
 
@@ -13,75 +13,89 @@
     left: 0;
     width: 100%;
     z-index: 1030;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* LEFT INFO */
 .top-info {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
     align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .divider {
-    opacity: 0.4;
+    opacity: 0.35;
 }
 
+/* LINKS */
 .top-link {
     color: #fff;
     text-decoration: none;
-    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    transition: all 0.25s ease;
 }
 
 .top-link:hover {
-    opacity: 0.7;
+    color: #38bdf8;
 }
 
-/* Social icons */
+/* SOCIAL AREA */
 .top-social {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
 }
 
 .social-icon {
     color: #fff;
     font-size: 14px;
-    transition:
-        transform 0.3s ease,
-        opacity 0.3s ease;
+
+    transition: all 0.25s ease;
 }
 
 .social-icon:hover {
+    color: #38bdf8;
     transform: translateY(-2px);
-    opacity: 0.7;
 }
 
-/* Language Button */
+/* LANGUAGE BUTTON */
 .lang-btn {
-    background: #fff;
-    color: #111;
+    background: #38bdf8;
+    color: #fff;
     border: none;
-    padding: 5px 12px;
+
+    padding: 4px 12px;
     border-radius: 20px;
+
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
+
     cursor: pointer;
+
     transition: all 0.3s ease;
 }
 
 .lang-btn:hover {
-    background: #ddd;
+    background: #0ea5e9;
 }
 
-/* Responsive */
+/* MOBILE */
 @media (max-width: 768px) {
-    .top-info {
-        justify-content: center;
-        text-align: center;
-        margin-bottom: 6px;
-    }
-
     .portfolio-topbar .container {
         flex-direction: column;
+        gap: 6px;
+    }
+
+    .top-info {
+        justify-content: center;
+    }
+
+    .top-social {
+        justify-content: center;
     }
 }

@@ -12,7 +12,7 @@
         @hasSection('title')
             @yield('title')
         @else
-            {{ config('app.name', 'Dr. Asif Almas Haque') }}
+            {{ config('app.name', 'Dr. Mohammad Faisal Ibn Kabir') }}
         @endif
     </title>
 

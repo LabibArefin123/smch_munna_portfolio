@@ -27,6 +27,7 @@ Route::get('/faq', [WelcomePageController::class, 'faq'])->name('faq');
 
 //Gallery Section
 Route::get('/gallery', [WelcomePageController::class, 'gallery'])->name('gallery');
+Route::get('/service', [WelcomePageController::class, 'service'])->name('service');
 
 //Contact Section
 Route::get('/contact', [WelcomePageController::class, 'contact'])->name('contact');

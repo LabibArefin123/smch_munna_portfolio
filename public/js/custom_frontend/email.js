@@ -1,24 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const emailBtn = document.getElementById("openEmailModal");
-    const emailModalElement = document.getElementById("emailModal");
-    const closeBtn = document.getElementById("closeEmail");
+    const locationBtn = document.getElementById("open-location-modal");
+    const locationModalElement = document.getElementById("locationModal");
 
-    if (!emailModalElement) return;
+    if (!locationBtn || !locationModalElement) return;
 
-    const emailModal = new bootstrap.Modal(emailModalElement);
+    const locationModal = new bootstrap.Modal(locationModalElement);
 
-    // Open modal
-    if (emailBtn) {
-        emailBtn.addEventListener("click", function (e) {
-            e.preventDefault();
-            emailModal.show();
-        });
-    }
-
-    // Close modal (manual close button)
-    if (closeBtn) {
-        closeBtn.addEventListener("click", function () {
-            emailModal.hide();
-        });
-    }
+    locationBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        locationModal.show();
+    });
 });

@@ -1,55 +1,45 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'Contact | Dr. Asif Almas Haque')
+@section('title', 'Contact | Dr. Mohammad Faisal Ibn Kabir')
 
 @section('meta')
-    <!-- Meta Description & Keywords -->
-    <meta name="description" content="Get in touch with Dr. Asif Almas Haque, leading colorectal surgeon in Dhaka, Bangladesh, for appointments or inquiries.">
-    <meta name="keywords" content="Contact Dr Asif Almas Haque, colorectal surgeon Dhaka, appointment, clinic contact">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Contact | Dr. Asif Almas Haque">
-    <meta property="og:description" content="Reach out to Dr. Asif Almas Haque, expert in colorectal, laparoscopic, and laser surgery.">
+    <meta name="description"
+        content="Contact Dr. Mohammad Faisal Ibn Kabir, Professor & Head of Cardiology at MH Samorita Medical College and Hospital. Book an appointment for cardiology consultation in Dhaka.">
+    <meta name="keywords"
+        content="Dr Mohammad Faisal Ibn Kabir, cardiologist Dhaka, heart specialist Bangladesh, cardiology consultation Dhaka">
+    <meta property="og:title" content="Contact | Dr. Mohammad Faisal Ibn Kabir">
+    <meta property="og:description"
+        content="Book an appointment with Dr. Mohammad Faisal Ibn Kabir, Clinical & Interventional Cardiologist in Dhaka.">
     <meta property="og:image" content="{{ asset('uploads/images/welcome_page/doctors/image_2.jpg') }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contact | Dr. Asif Almas Haque">
-    <meta name="twitter:description" content="Reach out to Dr. Asif Almas Haque for appointments or queries regarding colorectal treatments.">
+    <meta name="twitter:title" content="Contact | Dr. Mohammad Faisal Ibn Kabir">
+    <meta name="twitter:description"
+        content="Consult Dr. Mohammad Faisal Ibn Kabir for cardiology and heart disease treatment in Dhaka.">
     <meta name="twitter:image" content="{{ asset('uploads/images/welcome_page/doctors/image_2.jpg') }}">
-
-    <!-- Structured Data: LocalBusiness -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MedicalBusiness",
-      "name": "Dr. Asif Almas Haque",
-      "image": "{{ asset('uploads/images/welcome_page/doctors/image_2.jpg') }}",
-      "description": "Consult Dr. Asif Almas Haque, a leading colorectal surgeon in Dhaka, Bangladesh.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Your Clinic Street Address",
-        "addressLocality": "Dhaka",
-        "postalCode": "Your Postal Code",
-        "addressCountry": "BD"
-      },
-      "telephone": "Your Clinic Phone Number",
-      "url": "{{ url()->current() }}",
-      "sameAs": [
-        "https://www.facebook.com/your-page",
-        "https://www.youtube.com/@asifh7000",
-        "https://www.linkedin.com/in/your-profile"
-      ]
-    }
-    </script>
+{
+ "@context": "https://schema.org",
+ "@type": "Physician",
+ "name": "Dr. Mohammad Faisal Ibn Kabir",
+ "medicalSpecialty": "Cardiology",
+ "jobTitle": "Professor & Head of Cardiology",
+ "worksFor": "MH Samorita Medical College and Hospital",
+ "address": {
+   "@type": "PostalAddress",
+   "addressLocality": "Dhaka",
+   "addressCountry": "BD"
+ },
+ "telephone": "+8801732189966",
+ "url": "{{ url()->current() }}"
+}
+</script>
 @endsection
 
 <link rel="stylesheet" href="{{ asset('css/frontend/contact/custom_contact.css') }}">
 
 @section('content')
-
     @include('frontend.welcome_page.header')
 
     <!-- Banner -->
@@ -58,38 +48,38 @@
         <div class="contact-breadcrumb">
             <a href="{{ route('welcome') }}">Home</a>
             <span>></span>
-            <a href="{{ route('contact') }}">Contact Us</a>
+            <a href="{{ route('contact') }}">Contact</a>
         </div>
     </div>
 
     <section class="contact-section">
         <div class="contact-container">
-
-            <!-- Left: Appointment Form -->
+            <!-- Appointment Form -->
             <div class="contact-form-wrapper">
-                <h2 class="contact-title">Make an Appointment</h2>
+                <h2 class="contact-title">
+                    Book a Consultation
+                </h2>
+
                 <form method="POST" action="{{ route('contact.store') }}">
                     @csrf
                     <input type="hidden" name="type" value="contact">
-
-                    <div class="modal-body row">
-
-                        <div class="col-md-6 mb-2">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
                             <label>Full Name</label>
-                            <input name="name" class="form-control">
+                            <input name="name" class="form-control" required>
                         </div>
 
-                        <div class="col-md-6 mb-2">
-                            <label>Phone</label>
-                            <input name="phone" class="form-control">
+                        <div class="col-md-6 mb-3">
+                            <label>Phone Number</label>
+                            <input name="phone" class="form-control" required>
                         </div>
 
-                        <div class="col-md-6 mb-2">
+                        <div class="col-md-6 mb-3">
                             <label>Email</label>
                             <input name="email" type="email" class="form-control">
                         </div>
 
-                        <div class="col-md-6 mb-2">
+                        <div class="col-md-6 mb-3">
                             <label>Subject</label>
                             <input name="subject" class="form-control">
                         </div>
@@ -98,10 +88,9 @@
                             <label>Message</label>
                             <textarea name="message" rows="4" class="form-control"></textarea>
                         </div>
-
                     </div>
 
-                    <div class="modal-footer">
+                    <div class="mt-3">
                         <button class="btn btn-success w-100">
                             Send Message
                         </button>
@@ -109,34 +98,42 @@
                 </form>
             </div>
 
-            <!-- Right: Contact Info -->
+            <!-- Contact Info -->
             <div class="contact-info-wrapper">
+                <h3>Doctor Information</h3>
 
-                <h3>Contact Information</h3>
+                <div class="info-item">
+                    <strong>Doctor</strong>
+                    <p>Dr. Mohammad Faisal Ibn Kabir</p>
+                </div>
+
+                <div class="info-item">
+                    <strong>Specialty</strong>
+                    <p>Clinical & Interventional Cardiologist</p>
+                </div>
 
                 <div class="info-item">
                     <strong>Hospital</strong>
-                    <p>Dr. Fazlul Haque Colorectal Hospital</p>
+                    <p>MH Samorita Medical College and Hospital</p>
                 </div>
 
                 <div class="info-item">
                     <strong>Phone</strong>
-                    <p>0241023155</p>
+                    <p>01732189966</p>
                 </div>
 
                 <div class="info-item">
                     <strong>Email</strong>
-                    <p>asifh7000@gmail.com</p>
+                    <p>mfikabir1980@gmail.com</p>
                 </div>
 
                 <div class="info-item">
-                    <strong>Hospital Hours</strong>
-                    <p>Saturday – Thursday: 5PM – 9PM</p>
-                    <p class="closed-day">Friday: Closed</p>
+                    <strong>Consultation Locations</strong>
+                    <p>Authentic Diagnostic & Consultation Ltd.</p>
+                    <p>MH Samorita Medical College & Hospital</p>
+                    <p>Popular Diagnostic Centre (Badda)</p>
                 </div>
-
             </div>
-
         </div>
     </section>
     @include('frontend.welcome_page.footer')
