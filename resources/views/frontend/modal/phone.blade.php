@@ -12,27 +12,12 @@
                 <!-- First Number -->
                 <div class="row mb-3">
                     <div class="col-6">
-                        <a href="tel:01755697173" class="btn btn-outline-primary w-100">
-                            📞 Call 01755697173
+                        <a href="tel:01732189966" class="btn btn-outline-primary w-100">
+                            📞 Call 01732189966
                         </a>
                     </div>
                     <div class="col-6">
-                        <a href="https://wa.me/8801755697173?text=Hello%20Doctor,%20I%20would%20like%20to%20book%20an%20appointment."
-                            target="_blank" class="btn btn-outline-primary w-100">
-                            💬 WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Second Number -->
-                <div class="row">
-                    <div class="col-6">
-                        <a href="tel:01755697176" class="btn btn-outline-primary w-100">
-                            📞 Call 01755697176
-                        </a>
-                    </div>
-                    <div class="col-6">
-                        <a href="https://wa.me/8801755697176?text=Hello%20Doctor,%20I%20would%20like%20to%20book%20an%20appointment."
+                        <a href="https://wa.me/01732189966?text=Hello%20Doctor,%20I%20would%20like%20to%20book%20an%20appointment."
                             target="_blank" class="btn btn-outline-primary w-100">
                             💬 WhatsApp
                         </a>

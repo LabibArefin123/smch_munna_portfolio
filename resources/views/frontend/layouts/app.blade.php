@@ -57,7 +57,6 @@
 
     </div>
 
-    @include('frontend.modal.appointment')
     @include('frontend.modal.phone')
     @include('frontend.modal.email')
     @include('frontend.modal.location')

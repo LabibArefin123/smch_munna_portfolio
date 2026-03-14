@@ -4,61 +4,71 @@
 @section('content')
     <div class="login-wrapper">
         <div class="login-glass" id="sliderContainer">
-
             {{-- LEFT : ABOUT --}}
             <div class="about-slider">
-                <img src="{{ asset('uploads/images/login_page/logo.png') }}" class="hospital-logo" alt="Dr. Asif Almas Haque">
 
                 {{-- SHORT PROFILE --}}
                 <div class="about-content short" id="aboutShort">
-                    <h4 class="fw-bold mb-3">Dr. Asif Almas Haque</h4>
+
+                    <h4 class="fw-bold mb-3">
+                        Dr. Mohammad Faisal Ibn Kabir
+                    </h4>
 
                     <p class="mb-2">
-                        MBBS (SSMC), FCPS (Surgery), FCPS (Colorectal Surgery),
-                        FRCS (England, Glasgow, Edinburgh), FACS (USA), FASCRS (USA)
+                        Professor & Head, Department of Cardiology<br>
+                        MH Samorita Medical College & Hospital
                     </p>
 
                     <p>
-                        Consultant Colorectal, Laparoscopic & Laser Surgeon dedicated to
-                        advanced surgical precision, compassionate care, and patient-centered treatment.
+                        Experienced cardiologist specializing in cardiovascular disease
+                        diagnosis, preventive cardiology, hypertension management,
+                        and advanced heart care using modern medical approaches.
                     </p>
 
                     <button class="btn btn-outline-light rounded-pill mt-3" onclick="toggleAbout(true)">
                         View Professional Profile
                     </button>
+
                 </div>
+
 
                 {{-- FULL PROFILE --}}
                 <div class="about-content full" id="aboutFull" style="display:none;">
-                    <h4 class="fw-bold mb-3">Professional Overview</h4>
+
+                    <h4 class="fw-bold mb-3">
+                        Professional Overview
+                    </h4>
 
                     <p>
-                        Dr. Asif Almas Haque is a highly qualified colorectal surgeon with
-                        extensive national and international training. With years of experience
-                        in general and colorectal surgery, he specializes in laparoscopic,
-                        laser, and advanced pelvic procedures.
+                        Dr. Mohammad Faisal Ibn Kabir is a highly respected cardiologist
+                        with extensive experience in the diagnosis and management of
+                        cardiovascular diseases. As the Professor and Head of Cardiology
+                        at MH Samorita Medical College & Hospital, he is committed to
+                        delivering modern, evidence-based cardiac care.
                     </p>
 
                     <h5 class="mt-3">Areas of Expertise</h5>
+
                     <ul class="ps-3">
-                        <li>Colorectal Surgery</li>
-                        <li>Laparoscopic Surgery</li>
-                        <li>Laser Surgery</li>
-                        <li>Colorectal Cancer Surgery</li>
-                        <li>Advanced Pelvic Floor Procedures</li>
+                        <li>Coronary Artery Disease Treatment</li>
+                        <li>Hypertension Management</li>
+                        <li>Preventive Cardiology</li>
+                        <li>Cardiac Risk Assessment</li>
+                        <li>Advanced Cardiovascular Diagnosis</li>
                     </ul>
 
                     <p class="mt-3">
-                        Known for his patient-first philosophy, Dr. Asif ensures that every
-                        patient clearly understands their diagnosis, treatment options,
-                        and recovery plan. He believes in multidisciplinary collaboration
-                        to provide the highest standard of surgical care.
+                        His medical philosophy focuses on early diagnosis,
+                        patient education, and personalized treatment plans
+                        to ensure long-term cardiovascular health.
                     </p>
 
                     <button class="btn btn-outline-light rounded-pill mt-3" onclick="toggleAbout(false)">
                         Show Less
                     </button>
+
                 </div>
+
             </div>
 
 

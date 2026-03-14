@@ -4,27 +4,37 @@
     <div class="container">
 
         <h2 class="section-title">
-            <span>TOP COLORECTAL SURGEON IN BANGLADESH</span>
+            <span>LEADING CARDIOLOGIST IN BANGLADESH</span>
         </h2>
 
         <div class="achievement-content">
+
             <p>
-                <strong>Dr. Asif Almas Haque</strong> is widely recognized as one of the leading colorectal surgeons in
-                Bangladesh.
-                He has served in some of the most reputed hospitals in the country and has gained extensive experience
-                in the diagnosis and treatment of complex colorectal conditions.
+                <strong>Dr. Mohammad Faisal Ibn Kabir</strong> is recognized as a respected and experienced
+                cardiologist in Bangladesh, known for his dedication to advanced cardiovascular care and
+                patient-centered treatment. With years of clinical experience in cardiology and internal
+                medicine, he has successfully managed a wide range of complex heart conditions.
             </p>
 
             <p>
-                He specializes in advanced laparoscopic colorectal surgery and has successfully performed numerous
-                operations with excellent outcomes. His clinical expertise includes the management of colon and rectal
-                cancer, obstructed defecation syndrome, hemorrhoids, fistula, fissure, and other colorectal disorders.
+                As a Professor and Head of the Department of Cardiology at
+                <strong>MH Samorita Medical College & Hospital</strong>,
+                he provides comprehensive cardiology services including diagnosis and treatment of
+                coronary artery disease, hypertension, heart failure, arrhythmias, and other
+                cardiovascular disorders.
             </p>
 
             <p>
-                With a strong commitment to patient-centered care, Dr. Haque is known for his compassionate approach,
-                surgical precision, and high success rate in complex colorectal procedures. He remains dedicated to
-                providing safe, modern, and evidence-based treatment to his patients.
+                Dr. Kabir has received international training in cardiovascular intervention and
+                electrophysiology and continues to contribute to modern cardiac care through
+                evidence-based treatment, advanced diagnostic techniques, and compassionate care
+                for every patient.
+            </p>
+
+            <p>
+                His commitment to excellence in cardiology has earned the trust of patients seeking
+                reliable heart disease prevention, accurate diagnosis, and effective treatment
+                for long-term cardiovascular health.
             </p>
 
         </div>

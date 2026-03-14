@@ -17,8 +17,6 @@
     @include('frontend.welcome_page.header')
     @include('frontend.welcome_page.banner')
     @include('frontend.welcome_page.philosophy')
-    @include('frontend.welcome_page.publications')
-    @include('frontend.welcome_page.membership')
     @include('frontend.welcome_page.achievement')
     @include('frontend.welcome_page.message')
     @include('frontend.welcome_page.footer')

@@ -1,31 +1,48 @@
 <section id="message" class="message-section">
+
     <link rel="stylesheet" href="{{ asset('css/frontend/custom_message.css') }}">
+
     <div class="container">
 
         <div class="message-wrapper">
 
-            <!-- Left: Doctor / Patient Image -->
+            <!-- Left: Doctor Image -->
             <div class="message-image">
                 <img src="{{ asset('uploads/images/welcome_page/message/image_1.JPG') }}"
-                    alt="Dr. Asif Almas Haque with patient">
+                    alt="Dr. Mohammad Faisal Ibn Kabir with patient">
             </div>
 
-            <!-- Right: Text + Signature -->
+
+            <!-- Right: Message -->
             <div class="message-content">
 
                 <p>
-                    I JUST WANTED TO TAKE A MOMENT TO THANK ALL MY PATIENTS FOR THE TRUST YOU PLACED IN ME AND MY TEAM
-                    THROUGHOUT YOUR SURGICAL CARE. IT’S NEVER LOST ON ME HOW BIG A DECISION IT IS TO PUT YOUR HEALTH—AND
-                    YOUR LIFE—INTO SOMEONE ELSE’S HANDS. I’M GRATEFUL FOR THAT TRUST.
+                    As a cardiologist, my greatest priority is the health and well-being of my patients.
+                    Heart disease can be life-changing, but with early diagnosis, proper treatment,
+                    and healthy lifestyle choices, many cardiovascular conditions can be successfully managed.
+                </p>
+
+                <p>
+                    I am deeply grateful for the trust my patients place in me and my medical team.
+                    Every consultation, diagnosis, and treatment plan is designed with care,
+                    precision, and a commitment to improving long-term heart health.
+                </p>
+
+                <p>
+                    Our goal is not only to treat heart disease but also to guide patients toward
+                    prevention and a healthier future through modern cardiology care and
+                    compassionate medical support.
                 </p>
 
                 <p class="closing-line">
-                    THANK YOU, AND WE LOOK FORWARD TO WORKING WITH YOU.
+                    Thank you for your trust and confidence.
                 </p>
+
 
                 <!-- Signature -->
                 <div class="signature-box">
-                    <img src="{{ asset('uploads/images/welcome_page/message/image_2.png') }}" alt="Dr. Asif Almas Haque Signature">
+                    <img src="{{ asset('uploads/images/welcome_page/message/image_2.png') }}"
+                        alt="Dr. Mohammad Faisal Ibn Kabir Signature">
                 </div>
 
             </div>
@@ -33,4 +50,5 @@
         </div>
 
     </div>
+
 </section>

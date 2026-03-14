@@ -6,12 +6,11 @@
     <meta name="keywords"
         content="cardiologist services Dhaka, heart specialist Bangladesh, cardiology treatment, ECG echo cardiology">
 @endsection
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="{{ asset('css/frontend/services/custom_services.css') }}">
 
 @section('content')
     @include('frontend.welcome_page.header')
-    <!-- PAGE BANNER -->
+
     <div class="service-banner" style="background-image:url('{{ asset('uploads/images/welcome_page/cover.png') }}')">
         <div class="service-overlay"></div>
         <div class="service-breadcrumb">
@@ -45,16 +44,17 @@
     <section class="services-section">
         <div class="container">
             <div class="row g-4">
+
                 <!-- Service 1 -->
                 <div class="col-md-4">
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-heartbeat"></i>
+                            <i class="bi bi-heart-pulse"></i>
                         </div>
                         <h4>Heart Disease Diagnosis</h4>
                         <p>
-                            Accurate diagnosis of coronary artery disease, heart valve disorders, cardiomyopathy, and other
-                            cardiovascular conditions using modern clinical evaluation techniques.
+                            Accurate diagnosis of coronary artery disease, heart valve disorders, cardiomyopathy,
+                            and other cardiovascular conditions using modern clinical evaluation techniques.
                         </p>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                 <div class="col-md-4">
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-stethoscope"></i>
+                            <i class="bi bi-person-vcard"></i>
                         </div>
                         <h4>Cardiology Consultation</h4>
                         <p>
@@ -77,7 +77,7 @@
                 <div class="col-md-4">
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-procedures"></i>
+                            <i class="bi bi-activity"></i>
                         </div>
                         <h4>Interventional Cardiology</h4>
                         <p>
@@ -86,16 +86,17 @@
                         </p>
                     </div>
                 </div>
+
                 <!-- Service 4 -->
                 <div class="col-md-4">
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-notes-medical"></i>
+                            <i class="bi bi-clipboard2-pulse"></i>
                         </div>
                         <h4>Hypertension Management</h4>
                         <p>
-                            Diagnosis and treatment of high blood pressure with personalized lifestyle guidance and
-                            medication plans.
+                            Diagnosis and treatment of high blood pressure with personalized lifestyle guidance
+                            and medication plans.
                         </p>
                     </div>
                 </div>
@@ -104,7 +105,7 @@
                 <div class="col-md-4">
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-heart"></i>
+                            <i class="bi bi-shield-check"></i> <!-- Changed from bi-shield-heart -->
                         </div>
                         <h4>Preventive Cardiology</h4>
                         <p>
@@ -118,15 +119,16 @@
                 <div class="col-md-4">
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-user-md"></i>
+                            <i class="bi bi-bar-chart-line"></i> <!-- Changed from bi-graph-up-heart -->
                         </div>
                         <h4>Cardiac Risk Assessment</h4>
                         <p>
-                            Evaluation of cardiovascular risk factors including diabetes, cholesterol, smoking, and family
-                            history to prevent heart disease.
+                            Evaluation of cardiovascular risk factors including diabetes, cholesterol, smoking,
+                            and family history to prevent heart disease.
                         </p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>

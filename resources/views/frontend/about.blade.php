@@ -190,28 +190,6 @@
                         continues to contribute significantly to improving cardiovascular health services in Bangladesh.
 
                     </p>
-
-
-
-                    <!-- YOUTUBE -->
-
-                    <div class="youtube-card">
-
-                        <iframe src="https://www.youtube.com/embed/txHKFJtOqYE" title="Cardiology Health Awareness"
-                            frameborder="0" allowfullscreen>
-                        </iframe>
-
-                        <div class="yt-channel">
-
-                            <a href="#" target="_blank">
-                                ▶ Visit YouTube Channel
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
                 </div>
 
             </div>
