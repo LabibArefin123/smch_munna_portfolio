@@ -1,80 +1,75 @@
-<!-- Footer -->
-<footer class="footer bg-dark text-white pt-5">
+<footer class="footer-pro">
+
     <link rel="stylesheet" href="{{ asset('css/frontend/custom_footer.css') }}">
 
     <div class="container">
-        <div class="row g-4">
 
-            <!-- Doctor Overview -->
-            <div class="col-lg-3 col-md-6">
-                <h5 class="fw-bold text-warning mb-3">
+        <div class="row g-5">
+
+            <!-- Doctor Brand -->
+
+            <div class="col-lg-4">
+
+                <h4 class="footer-doctor-name">
                     Dr. Mohammad Faisal Ibn Kabir
-                </h5>
+                </h4>
 
-                <p class="small">
-                    Professor & Head, Department of Cardiology<br>
+                <p class="footer-title">
+                    Professor & Head, Department of Cardiology
+                </p>
+
+                <p class="footer-hospital">
                     MH Samorita Medical College & Hospital
                 </p>
 
-                <ul class="list-unstyled small mt-3">
-                    <li>MD (Cardiology)</li>
-                    <li>FCPS (Medicine)</li>
-                    <li>MBBS (Dhaka Medical College)</li>
-                    <li>Fellowship – Cardiovascular Intervention (China)</li>
-                </ul>
+                <div class="footer-degree">
+
+                    <span>MD (Cardiology)</span>
+                    <span>FCPS (Medicine)</span>
+                    <span>MBBS – Dhaka Medical College</span>
+                    <span>Fellowship – Cardiovascular Intervention (China)</span>
+
+                </div>
 
             </div>
 
 
-            <!-- Professional Profile -->
-            <div class="col-lg-3 col-md-6">
+            <!-- Quick Links -->
 
-                <h6 class="fw-bold text-warning mb-3">Professional Profile</h6>
+            <div class="col-lg-2 col-md-6">
 
-                <ul class="list-unstyled small footer-links">
+                <h6 class="footer-heading">Profile</h6>
 
-                    <li>
-                        <a href="{{ route('about') }}">Doctor Profile</a>
-                    </li>
+                <ul class="footer-links">
 
-                    <li>
-                        <a href="{{ route('page_1') }}">Education & Training</a>
-                    </li>
+                    <li><a href="{{ route('about') }}">Doctor Profile</a></li>
 
-                    <li>
-                        <a href="{{ route('page_2') }}">International Conferences</a>
-                    </li>
+                    <li><a href="{{ route('page_1') }}">Education</a></li>
 
-                    <li>
-                        <a href="{{ route('page_3') }}">Journal Publications</a>
-                    </li>
+                    <li><a href="{{ route('page_2') }}">Conferences</a></li>
 
-                    <li>
-                        <a href="{{ route('page_4') }}">Professional Membership</a>
-                    </li>
+                    <li><a href="{{ route('page_3') }}">Publications</a></li>
+
+                    <li><a href="{{ route('page_4') }}">Membership</a></li>
 
                 </ul>
 
             </div>
 
 
-            <!-- Cardiology Services -->
+            <!-- Services -->
+
             <div class="col-lg-3 col-md-6">
 
-                <h6 class="fw-bold text-warning mb-3">Cardiology Services</h6>
+                <h6 class="footer-heading">Cardiology Services</h6>
 
-                <ul class="list-unstyled small footer-links">
+                <ul class="footer-links">
 
                     <li>Heart Disease Diagnosis</li>
-
                     <li>Cardiology Consultation</li>
-
                     <li>Interventional Cardiology</li>
-
                     <li>Hypertension Management</li>
-
                     <li>Preventive Cardiology</li>
-
                     <li>Cardiac Risk Assessment</li>
 
                 </ul>
@@ -83,41 +78,103 @@
 
 
             <!-- Contact -->
-            <div class="col-lg-3 col-md-6">
 
-                <h6 class="fw-bold text-warning mb-3">Contact Information</h6>
+            <div class="col-lg-3">
 
-                <p class="small mb-2">
-                    <i class="bi bi-geo-alt-fill me-2"></i>
-                    MH Samorita Medical College & Hospital<br>
-                    Dhaka, Bangladesh
+                <h6 class="footer-heading">Contact</h6>
+
+                <p class="footer-contact">
+                    <i class="bi bi-geo-alt"></i>
+                    Tejgaon, Dhaka – Bangladesh
                 </p>
 
-                <p class="small mb-2">
-                    <i class="bi bi-telephone-fill me-2"></i>
-                    +8801XXXXXXXXX
+                <p class="footer-contact">
+                    <i class="bi bi-telephone"></i>
+                    +8801755697173
                 </p>
 
-                <p class="small mb-3">
-                    <i class="bi bi-envelope-fill me-2"></i>
-                    info@samorita.com
+                <p class="footer-contact">
+                    <i class="bi bi-envelope"></i>
+                    mfikabir1980@gmail.com
                 </p>
 
-
-                <!-- Social -->
                 <div class="footer-social">
 
-                    <a href="#" target="_blank">
-                        <i class="bi bi-facebook"></i>
-                    </a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-youtube"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
 
-                    <a href="#" target="_blank">
-                        <i class="bi bi-youtube"></i>
-                    </a>
+                </div>
 
-                    <a href="#" target="_blank">
-                        <i class="bi bi-linkedin"></i>
-                    </a>
+                <a href="{{ route('contact') }}" class="footer-appointment-btn">
+                    Book Appointment
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Chamber Schedule -->
+
+        <div class="footer-chamber">
+
+            <h5 class="chamber-title">
+                Consultation Chambers
+            </h5>
+
+            <div class="row g-4">
+
+                <div class="col-lg-4">
+
+                    <div class="chamber-card">
+
+                        <h6>Authentic Diagnostic</h6>
+
+                        <p>Chankharphul, Dhaka</p>
+
+                        <span>Sat • Mon • Wed</span>
+                        <strong>3:30 PM – 6:30 PM</strong>
+
+                        <span>Sun • Tue • Thu</span>
+                        <strong>3:30 PM – 8:00 PM</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4">
+
+                    <div class="chamber-card">
+
+                        <h6>MH Samorita Hospital</h6>
+
+                        <p>Tejgaon, Dhaka</p>
+
+                        <span>Morning</span>
+                        <strong>9:00 AM – 1:30 PM</strong>
+
+                        <span>Sun • Tue • Thu (Night)</span>
+                        <strong>8:30 PM – 10:00 PM</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4">
+
+                    <div class="chamber-card">
+
+                        <h6>Popular Diagnostic</h6>
+
+                        <p>North Badda, Dhaka</p>
+
+                        <span>Sun • Tue • Thu</span>
+                        <strong>8:00 PM – 10:00 PM</strong>
+
+                    </div>
 
                 </div>
 
@@ -126,44 +183,14 @@
         </div>
 
 
-        <!-- Chamber Hours -->
-        <div class="row mt-5 pt-3 border-top border-secondary">
+        <!-- Bottom -->
 
-            <div class="col-12 text-center">
-
-                <h6 class="fw-bold text-warning mb-3">
-                    Chamber Hours
-                </h6>
-
-                <div class="d-flex flex-wrap justify-content-center gap-4 small">
-
-                    <div>Sat <strong>5PM – 9PM</strong></div>
-
-                    <div>Sun <strong>5PM – 9PM</strong></div>
-
-                    <div>Mon <strong>5PM – 9PM</strong></div>
-
-                    <div>Tue <strong>5PM – 9PM</strong></div>
-
-                    <div>Wed <strong>5PM – 9PM</strong></div>
-
-                    <div>Thu <strong>5PM – 9PM</strong></div>
-
-                    <div class="text-danger">Friday Off</div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- Copyright -->
-        <div class="text-center small mt-4 pt-3 border-top border-secondary">
+        <div class="footer-bottom">
 
             © {{ date('Y') }} Dr. Mohammad Faisal Ibn Kabir. All Rights Reserved.
 
         </div>
 
     </div>
+
 </footer>

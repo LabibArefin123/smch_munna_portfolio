@@ -22,7 +22,7 @@
 
             <a href="mailto:mfikabir1980@gmail.com" class="top-link">
                 <i class="fas fa-envelope"></i>
-                Email
+                Email: mfikabir1980@gmail.com
             </a>
 
         </div>
