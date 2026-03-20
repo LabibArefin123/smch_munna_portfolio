@@ -26,16 +26,17 @@
         </div>
     </div>
 
-    <!-- INTRO SECTION -->
     <section class="service-intro">
         <div class="container">
             <h2>
-                Comprehensive Cardiac Care
+                Caring for Your Heart, Every Step of the Way
             </h2>
             <p>
-                :contentReference[oaicite:1]{index=1} provides comprehensive cardiology services focusing on prevention,
-                diagnosis, and treatment of heart diseases. Using modern diagnostic technologies and international clinical
-                standards, patients receive accurate evaluation and personalized treatment plans for optimal heart health.
+                We provide comprehensive cardiology services focused on prevention, diagnosis, and treatment of heart
+                conditions.
+                With modern diagnostic technologies and internationally recognized clinical standards, every patient
+                receives
+                accurate evaluation and personalized care designed for long-term heart health.
             </p>
         </div>
     </section>
