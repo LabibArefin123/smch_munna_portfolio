@@ -18,6 +18,7 @@
     @include('frontend.welcome_page.banner')
     @include('frontend.welcome_page.philosophy')
     @include('frontend.welcome_page.achievement')
+    @include('frontend.welcome_page.body_part')
     @include('frontend.welcome_page.message')
     @include('frontend.welcome_page.footer')
 @endsection
