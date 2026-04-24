@@ -49,35 +49,6 @@ class WelcomePageController extends Controller
         return view('frontend.profile.page_4');
     }
 
-    public function book()
-    {
-        return view('frontend.book');
-    }
-
-    public function piles()
-    {
-        return view('frontend.conditions.piles');
-    }
-
-    public function fistula()
-    {
-        return view('frontend.conditions.fistula');
-    }
-
-    public function fissure()
-    {
-        return view('frontend.conditions.fissure');
-    }
-
-    public function colorectal_cancer()
-    {
-        return view('frontend.conditions.colorectal_cancer');
-    }
-
-    public function ibs()
-    {
-        return view('frontend.conditions.ibs');
-    }
 
     public function faq()
     {
@@ -105,7 +76,7 @@ class WelcomePageController extends Controller
         ]);
 
         // Generate readable unique ID
-        $uid = 'DFCH-PROB-' . strtoupper(Str::random(6));
+        $uid = 'SMCH-PROB-' . strtoupper(Str::random(6));
 
         $fileName = null;
 

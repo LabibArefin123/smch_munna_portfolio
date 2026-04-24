@@ -8,7 +8,7 @@
 
             <!-- Left: Doctor Image -->
             <div class="message-image">
-                <img src="{{ asset('uploads/images/welcome_page/message/image_1.JPG') }}"
+                <img src="{{ asset('uploads/images/welcome_page/message/image.jpeg') }}"
                     alt="Dr. Mohammad Faisal Ibn Kabir with patient">
             </div>
 
@@ -40,10 +40,10 @@
 
 
                 <!-- Signature -->
-                <div class="signature-box">
+                {{-- <div class="signature-box">
                     <img src="{{ asset('uploads/images/welcome_page/message/image_2.png') }}"
                         alt="Dr. Mohammad Faisal Ibn Kabir Signature">
-                </div>
+                </div> --}}
 
             </div>
 

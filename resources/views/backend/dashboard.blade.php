@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dr. Asif Almas Haque – Admin Dashboard')
+@section('title', 'Dr. Mohammad Faisal Ibn Kabir – Admin Dashboard')
 <link rel="stylesheet" href="{{ asset('css/backend/admin/dashboard.css') }}">
 @section('content')
     <div class="container-fluid py-4">
@@ -8,7 +8,7 @@
         {{-- Header --}}
         <div class="mb-4">
             <h1 class="h3 font-weight-bold text-primary">
-                Dr. Asif Almas Haque – Portfolio Management
+               Dr. Mohammad Faisal Ibn Kabir – Portfolio Management
             </h1>
             <p class="text-muted">
                 Manage profile information, achievements, publications, gallery, and website content.
