@@ -1,0 +1,192 @@
+/* ======================================
+   NAVBAR SCSS STRUCTURE
+   1. Base (brand, text)
+   2. Layout (navbar container)
+   3. Components (menu, dropdown, button)
+   4. Responsive
+====================================== */
+
+
+/* ========= 1. BASE (Brand) ========= */
+.brand-text-wrap {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    text-decoration: none;
+
+    .brand-name {
+        font-weight: 700;
+        font-size: 18px;
+        color: #111;
+    }
+
+    .brand-degree {
+        font-size: 12px;
+        color: #6c757d;
+        letter-spacing: .3px;
+    }
+}
+
+
+/* ========= 2. LAYOUT ========= */
+.portfolio-navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 15px 0;
+    top: 40px;
+    z-index: 1030;
+}
+
+
+/* ========= 3. COMPONENTS ========= */
+
+/* ---- MENU ---- */
+.portfolio-menu {
+
+    .nav-item {
+        position: relative;
+    }
+
+    .nav-link {
+        color: #222;
+        font-weight: 500;
+        font-size: 15px;
+        padding: 8px 14px;
+        position: relative;
+        transition: 0.3s ease;
+
+        &:hover,
+        &.active {
+            color: #111;
+        }
+    }
+
+    /* underline animation */
+    .nav-item:not(.dropdown) {
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: #111;
+            transform: translateX(-50%);
+            transition: 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 60%;
+        }
+    }
+}
+
+
+/* ---- DROPDOWN ---- */
+.portfolio-menu {
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
+
+        background: #fff;
+        border-radius: 8px;
+        padding: 8px 0;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.25s ease;
+
+        display: block;
+        z-index: 9999;
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+
+    .dropdown-item {
+        padding: 8px 18px;
+        font-size: 14px;
+        color: #222;
+        transition: 0.2s ease;
+
+        &::after {
+            display: none !important;
+        }
+
+        &:hover {
+            background: #ff6b6b;
+            color: #fff;
+        }
+    }
+
+    /* arrow */
+    .dropdown-toggle {
+        &::after {
+            margin-left: 6px;
+            vertical-align: 0.2em;
+            transition: 0.3s ease;
+        }
+
+        &[aria-expanded="true"]::after {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+
+/* ---- CTA BUTTON ---- */
+.portfolio-btn {
+    background: #111;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s ease;
+
+    &:hover {
+        background: #333;
+        color: #fff;
+    }
+}
+
+
+/* ========= 4. RESPONSIVE ========= */
+@media (max-width: 991px) {
+
+    .portfolio-menu {
+        text-align: center;
+        padding-top: 15px;
+
+        .nav-link,
+        .dropdown-item {
+            padding: 10px 15px;
+        }
+
+        /* accordion dropdown */
+        .dropdown-menu {
+            position: static;
+            transform: none;
+            opacity: 1;
+            visibility: visible;
+            box-shadow: none;
+            border: none;
+            display: none;
+
+            &.show {
+                display: block;
+            }
+        }
+    }
+}

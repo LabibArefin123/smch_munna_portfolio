@@ -1,0 +1,24 @@
+.top-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.divider {
+    opacity: 0.35;
+}
+
+.top-link {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    transition: all 0.25s ease;
+
+    &:hover {
+        color: #38bdf8;
+    }
+}

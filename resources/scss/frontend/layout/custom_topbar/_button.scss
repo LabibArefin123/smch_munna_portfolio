@@ -1,0 +1,18 @@
+.lang-btn {
+    background: #38bdf8;
+    color: #fff;
+    border: none;
+
+    padding: 4px 12px;
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: #0ea5e9;
+    }
+}

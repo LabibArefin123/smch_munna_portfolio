@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="{{ asset('css/frontend/custom_navbar.css') }}">
 
 <nav class="navbar navbar-expand-lg portfolio-navbar fixed-top">
     <div class="container">

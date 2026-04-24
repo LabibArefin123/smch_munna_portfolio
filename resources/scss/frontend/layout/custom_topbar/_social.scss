@@ -1,0 +1,16 @@
+.top-social {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 14px;
+    transition: all 0.25s ease;
+
+    &:hover {
+        color: #38bdf8;
+        transform: translateY(-2px);
+    }
+}

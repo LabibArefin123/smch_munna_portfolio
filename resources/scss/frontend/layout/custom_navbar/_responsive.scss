@@ -1,0 +1,26 @@
+@media (max-width: 991px) {
+
+    .portfolio-menu {
+        text-align: center;
+        padding-top: 15px;
+
+        .nav-link,
+        .dropdown-item {
+            padding: 10px 15px;
+        }
+
+        .dropdown-menu {
+            position: static;
+            transform: none;
+            opacity: 1;
+            visibility: visible;
+            box-shadow: none;
+            border: none;
+            display: none;
+
+            &.show {
+                display: block;
+            }
+        }
+    }
+}

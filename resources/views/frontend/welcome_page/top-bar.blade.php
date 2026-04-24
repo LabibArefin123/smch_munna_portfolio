@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="{{ asset('css/frontend/custom_topbar.css') }}">
 
 <div class="portfolio-topbar">
     <div class="container d-flex justify-content-between align-items-center">

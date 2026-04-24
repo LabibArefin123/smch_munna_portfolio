@@ -1,0 +1,17 @@
+@media (max-width: 768px) {
+
+    .portfolio-topbar {
+        .container {
+            flex-direction: column;
+            gap: 6px;
+        }
+    }
+
+    .top-info {
+        justify-content: center;
+    }
+
+    .top-social {
+        justify-content: center;
+    }
+}
