@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const locationBtn = document.getElementById("open-location-modal");
-    const locationModalElement = document.getElementById("locationModal");
+    const emailBtn = document.getElementById("openEmailModal");
+    const emailModalElement = document.getElementById("emailModal");
 
-    if (!locationBtn || !locationModalElement) return;
+    if (!emailBtn || !emailModalElement) return;
 
-    const locationModal = new bootstrap.Modal(locationModalElement);
+    const emailModal = new bootstrap.Modal(emailModalElement);
 
-    locationBtn.addEventListener("click", function (e) {
+    emailBtn.addEventListener("click", function (e) {
         e.preventDefault();
-        locationModal.show();
+        emailModal.show();
     });
 });

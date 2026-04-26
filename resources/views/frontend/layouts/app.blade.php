@@ -35,6 +35,11 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <style>
+        body {
+            visibility: hidden;
+        }
+    </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/frontend/frontend.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/modals/custom_appointment_modal.css') }}">
@@ -63,7 +68,7 @@
     @include('frontend.modal.footer.phone')
     @include('frontend.modal.footer.email')
     @include('frontend.modal.footer.location')
-    
+
     <!-- Hidden Google Translate Widget -->
     <div id="google_translate_element" style="display:none;"></div>
     <!-- Bootstrap JS + dependencies -->
@@ -99,9 +104,7 @@
     </script>
     {{-- End of Contact Succss Swal Notification --}}
 
-    <script src="{{ asset('js/custom_frontend/sweet_alert.js') }}"></script> {{-- Sweet Alert Notification JS --}}
-    <script src="{{ asset('js/custom_frontend/contact_success.js') }}"></script> {{-- Contact Success Notification JS --}}
-    <script src="{{ asset('js/custom_frontend/appointment-modal.js') }}"></script> {{-- Appointment Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/fouc_load.js') }}"></script> {{-- FOUC Load JS --}}
     <script src="{{ asset('js/custom_frontend/phone.js') }}"></script> {{-- Phone Modal JS --}}
     <script src="{{ asset('js/custom_frontend/email.js') }}"></script> {{-- Email Modal JS --}}
     <script src="{{ asset('js/custom_frontend/location.js') }}"></script> {{-- Location Modal JS --}}
@@ -111,6 +114,9 @@
     <script src="{{ asset('js/custom_frontend/scroll_progress.js') }}"></script> {{-- Scroll Progress JS --}}
     <script src="{{ asset('js/custom_frontend/custom_back_top_button.js') }}"></script> {{-- Back to Top JS --}}
     <script src="{{ asset('js/custom_frontend/custom_footer_modal.js') }}"></script> {{-- Footer Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/sweet_alert.js') }}"></script> {{-- Sweet Alert Notification JS --}}
+    <script src="{{ asset('js/custom_frontend/contact_success.js') }}"></script> {{-- Contact Success Notification JS --}}
+    <script src="{{ asset('js/custom_frontend/appointment-modal.js') }}"></script> {{-- Appointment Modal JS --}}
 
     @if (!Request::is('login'))
         <!-- Google Translate Library -->

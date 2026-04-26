@@ -9,8 +9,8 @@
             <div class="modal-body text-center">
                 <p>Email Address:</p>
 
-                <a href="mailto:info@fazlulhaquehospital.com" class="btn btn-primary w-100">
-                    ✉ info@fazlulhaquehospital.com
+                <a href="mailto:mfikabir1980@gmail.com" class="btn btn-primary w-100">
+                    ✉ mfikabir1980@gmail.com
                 </a>
             </div>
         </div>
