@@ -1,0 +1,15 @@
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gallery-item {
+    img {
+        transition: transform 0.3s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}

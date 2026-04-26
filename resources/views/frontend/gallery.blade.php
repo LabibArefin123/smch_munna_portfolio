@@ -25,9 +25,6 @@
     <meta name="twitter:image" content="{{ asset('uploads/images/welcome_page/doctors/image_2.jpg') }}">
 @endsection
 
-<link rel="stylesheet" href="{{ asset('css/frontend/gallery/custom_gallery.css') }}">
-
-<link rel="stylesheet" href="{{ asset('css/frontend/gallery/custom_gallery.css') }}">
 @section('content')
     @include('frontend.welcome_page.header')
     <div class="gallery-banner" style="background-image: url('{{ asset('uploads/images/welcome_page/cover.png') }}');">

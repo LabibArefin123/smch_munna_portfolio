@@ -1,5 +1,5 @@
-<section id="banner" >
-    <div id="slider" class="position-relative w-100" style="height:70vh;">
+<section id="banner" class="home-banner">
+<div id="slider" class="position-relative w-100">
         @php
             $slides = [
                 [

@@ -33,45 +33,26 @@
 
 @endsection
 
-
-<link rel="stylesheet" href="{{ asset('css/frontend/about/custom_about.css') }}">
-
-
 @section('content')
 
     @include('frontend.welcome_page.header')
-
-
     <div class="doctor-banner" style="background-image: url('{{ asset('uploads/images/welcome_page/cover.png') }}');">
 
-        <nav class="breadcrumb-custom">
-
-            <a href="{{ route('welcome') }}" class="doc-link text-decoration-none">
-                Home
-            </a>
-
-            <span>></span>
-
-            <a href="{{ route('about') }}" class="doc-link text-decoration-none">
-                Dr. Mohammad Faisal Ibn Kabir
-            </a>
-
-        </nav>
+    <div class="doctor-overlay"></div>
+        <!-- Title Content -->
+        <div class="doctor-title">
+            <h1>About Dr. Mohammad Faisal Ibn Kabir</h1>
+            <p>
+                Dedicated to advanced heart care, precision diagnosis, and compassionate treatment
+                for every patient.
+            </p>
+        </div>
 
     </div>
-
-
-
     <section class="doctor-profile">
-
         <div class="doctor-card">
-
             <div class="row align-items-start">
-
-
-                <!-- IMAGE -->
                 <div class="col-lg-4 col-md-5 mb-4 mb-md-0">
-
                     <div class="doctor-image">
                         <img src="{{ asset('uploads/images/welcome_page/doctors/image.jpeg') }}" class="magnify-img"
                             alt="Dr. Mohammad Faisal Ibn Kabir">
@@ -80,7 +61,6 @@
                         </a>
                     </div>
                 </div>
-
                 <div class="col-lg-8 col-md-7 doctor-content">
                     <h2 class="doctor-name">
                         Dr. Mohammad Faisal Ibn Kabir

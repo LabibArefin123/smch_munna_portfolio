@@ -1,0 +1,27 @@
+.youtube-card {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #e5e7eb;
+
+    iframe {
+        width: 100%;
+        height: 260px;
+        border-radius: 6px;
+    }
+
+    .yt-channel {
+        margin-top: 12px;
+        text-align: left;
+
+        a {
+            font-size: 14px;
+            font-weight: 600;
+            color: #111827;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

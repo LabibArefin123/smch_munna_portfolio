@@ -1,0 +1,67 @@
+.doctor-banner {
+    position: relative;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: #fff;
+}
+
+/* Overlay like service page but slightly premium */
+.doctor-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+            rgba(0, 51, 102, 0.85),
+            rgba(0, 128, 128, 0.75));
+}
+
+/* Title block */
+.doctor-title {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+
+    h1 {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 17px;
+        color: #e2e8f0;
+    }
+}
+
+/* Breadcrumb (top-left floating style) */
+.breadcrumb-custom {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    z-index: 2;
+
+    font-size: 14px;
+    color: #e5e7eb;
+
+    a {
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.9;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    span {
+        margin: 0 6px;
+        opacity: 0.7;
+    }
+}

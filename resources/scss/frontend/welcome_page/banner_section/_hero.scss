@@ -1,34 +1,50 @@
+.home-banner {
+    margin-top: -110px; // 🔥 cancels global body padding ONLY here
+}
+
+/* FULL HEIGHT HERO FIX */
+#slider {
+    height: calc(100vh); // full screen
+    min-height: 600px;
+}
+
+/* overlay for modern feel */
 .doctor-slide {
-    height: 100%;
-    background: linear-gradient(135deg, #f8f9fa, #ffffff);
-    overflow: hidden;
     position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to right,
+                rgba(0, 0, 0, 0.6),
+                rgba(0, 0, 0, 0.2));
+        z-index: 1;
+    }
 }
 
 .hero-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 
     h2 {
-        font-size: 2.4rem;
+        font-size: 2.6rem;
         font-weight: 700;
-        color: #111;
-        margin-bottom: 15px;
+        color: #fff; // 🔥 better contrast
     }
 
     p {
         &:first-of-type {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #666;
-            margin-bottom: 15px;
+            font-size: 1.2rem;
+            color: #e5e7eb;
         }
 
         &:last-of-type {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #444;
+            color: #d1d5db;
         }
     }
+}
+/* ensure content above overlay */
+.hero-content,
+.doctor-img-wrapper {
+    position: relative;
+    z-index: 2;
 }

@@ -1,0 +1,25 @@
+/* Sticky image (desktop only) */
+@media (min-width: 992px) {
+    .doctor-image {
+        position: sticky;
+        top: 120px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .doctor-card {
+        padding: 30px;
+    }
+
+    .doctor-name {
+        font-size: 24px;
+    }
+
+    .doctor-content {
+        p {
+            font-size: 14px;
+        }
+    }
+}

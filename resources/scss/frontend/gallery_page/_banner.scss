@@ -1,0 +1,38 @@
+.gallery-banner {
+    height: 260px;
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #003366cc, #008080cc);
+}
+
+.gallery-breadcrumb {
+    position: relative;
+    z-index: 2;
+
+    background: rgba(255, 255, 255, 0.15);
+    padding: 12px 28px;
+    border-radius: 30px;
+
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 15px;
+
+    a {
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+            color: #ffd700;
+        }
+    }
+}
