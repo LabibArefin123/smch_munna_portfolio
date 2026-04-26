@@ -1,0 +1,28 @@
+.contact-info-wrapper {
+    h3 {
+        font-size: 22px;
+        margin-bottom: 25px;
+        color: #003366;
+    }
+}
+
+.info-item {
+    margin-bottom: 20px;
+
+    strong {
+        display: block;
+        font-size: 14px;
+        color: #004d66;
+        margin-bottom: 5px;
+    }
+
+    p {
+        font-size: 14px;
+        color: #555;
+    }
+}
+
+.closed-day {
+    color: #c0392b;
+    font-weight: 600;
+}

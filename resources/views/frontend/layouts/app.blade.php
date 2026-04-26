@@ -64,7 +64,7 @@
 
     @include('frontend.modal.phone')
     @include('frontend.modal.email')
-    @include('frontend.modal.location')
+    @include('frontend.modal.top_bar.custom_location.location')
     @include('frontend.modal.footer.phone')
     @include('frontend.modal.footer.email')
     @include('frontend.modal.footer.location')

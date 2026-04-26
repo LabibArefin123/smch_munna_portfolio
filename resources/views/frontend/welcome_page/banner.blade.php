@@ -1,4 +1,4 @@
-<section id="banner" class="banner-section w-100">
+<section id="banner" >
     <div id="slider" class="position-relative w-100" style="height:70vh;">
         @php
             $slides = [
@@ -28,8 +28,17 @@
                                 <div class="col-md-6 h-100 position-relative order-1 order-md-0">
                                     <a href="{{ $slide['route'] }}" class="doctor-image-link">
 
-                                        <img src="{{ asset('uploads/images/welcome_page/slider/' . $slide['image']) }}"
-                                            class="doctor-img left" alt="{{ $slide['name'] }}">
+                                        <div class="doctor-img-wrapper image-left-float">
+
+                                            <div class="doctor-img-frame">
+
+                                                <img src="{{ asset('uploads/images/welcome_page/slider/' . $slide['image']) }}"
+                                                    class="doctor-img left" alt="{{ $slide['name'] }}">
+
+                                            </div>
+
+                                        </div>
+
                                     </a>
                                 </div>
                             @endif

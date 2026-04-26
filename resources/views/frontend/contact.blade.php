@@ -37,19 +37,21 @@
 </script>
 @endsection
 
-<link rel="stylesheet" href="{{ asset('css/frontend/contact/custom_contact.css') }}">
-
 @section('content')
     @include('frontend.welcome_page.header')
 
     <!-- Banner -->
-    <div class="contact-banner" style="background-image: url('{{ asset('uploads/images/welcome_page/cover.png') }}');">
+    <div class="contact-banner" style="background-image:url('{{ asset('uploads/images/welcome_page/cover.png') }}')">
+
         <div class="contact-overlay"></div>
-        <div class="contact-breadcrumb">
-            <a href="{{ route('welcome') }}">Home</a>
-            <span>></span>
-            <a href="{{ route('contact') }}">Contact</a>
+
+        <div class="contact-title">
+            <h1>Contact Us</h1>
+            <p>
+                Get in touch for appointments and consultations
+            </p>
         </div>
+
     </div>
 
     <section class="contact-section">

@@ -6,18 +6,12 @@
     <meta name="keywords"
         content="cardiologist services Dhaka, heart specialist Bangladesh, cardiology treatment, ECG echo cardiology">
 @endsection
-<link rel="stylesheet" href="{{ asset('css/frontend/services/custom_services.css') }}">
 
 @section('content')
     @include('frontend.welcome_page.header')
 
     <div class="service-banner" style="background-image:url('{{ asset('uploads/images/welcome_page/cover.png') }}')">
         <div class="service-overlay"></div>
-        <div class="service-breadcrumb">
-            <a href="{{ route('welcome') }}">Home</a>
-            <span>></span>
-            <span>Services</span>
-        </div>
         <div class="service-title">
             <h1>Cardiology Services</h1>
             <p>

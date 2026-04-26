@@ -1,28 +1,152 @@
+.doctor-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/* =========================
+   LEFT FLOAT ZONE (75% CROP)
+========================= */
+.image-left-float {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* FRAME HOLDER */
+.doctor-img-frame {
+    position: relative;
+
+    height: 75%;
+    /* 👈 visible area */
+    width: auto;
+
+    display: flex;
+    align-items: flex-start;
+    /* 👈 TOP ALIGN (KEY FIX) */
+    justify-content: center;
+
+    overflow: hidden;
+    border-radius: 28px;
+
+    animation: floatDoctor 4s ease-in-out infinite;
+}
+/* FLOATING EFFECT */
+@keyframes floatDoctor {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* =========================
+   IMAGE (PORTRAIT STYLE)
+========================= */
 .doctor-img {
+    height: 120%;
+    /* intentionally bigger to allow crop */
+    width: auto;
+    object-fit: cover;
+
+    display: block;
+    border-radius: 24px;
+
+    position: relative;
+    z-index: 5;
+}
+
+/* =========================
+   🔥 BALANCED GRADIENT BORDER
+========================= */
+.doctor-img-frame::before {
+    content: "";
     position: absolute;
-    bottom: 0;
-    max-height: 90%;
-    object-fit: contain;
-    transition: transform 0.5s ease;
+    inset: 0;
+    padding: 2px;
+    border-radius: 28px;
 
-    &.left {
-        left: 10%;
+    background: linear-gradient(120deg,
+            #00f5ff,
+            #7c4dff,
+            #ff4d8d,
+            #00f5ff);
+    background-size: 300% 300%;
+    animation: borderGlow 5s linear infinite;
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    pointer-events: none;
+}
+
+/* SOFT OUTER GLOW */
+.doctor-img-frame::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 32px;
+
+    background: linear-gradient(120deg,
+            rgba(0, 245, 255, 0.4),
+            rgba(124, 77, 255, 0.4),
+            rgba(255, 77, 141, 0.4));
+
+    filter: blur(14px);
+    z-index: 0;
+    opacity: 0.7;
+}
+
+/* BORDER ANIMATION */
+@keyframes borderGlow {
+    0% {
+        background-position: 0% 50%;
     }
 
-    &.right {
-        right: 10%;
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
     }
 }
 
-.slide.active {
+/* hover lift */
+.slide.active .doctor-img {
+    transform: scale(1.02);
+}
+
+/* shadow refinement */
+.doctor-image-link img {
+    filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.18));
+}
+
+/* =========================
+   MOBILE FIX
+========================= */
+@media (max-width: 768px) {
+    .doctor-img-frame {
+        height: auto;
+        width: 80%;
+    }
+
     .doctor-img {
-        transform: translateY(-8px);
-    }
-}
-
-/* Soft shadow */
-.doctor-image-link {
-    img {
-        filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.15));
+        height: auto;
+        width: 100%;
     }
 }

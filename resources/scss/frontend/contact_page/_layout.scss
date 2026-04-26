@@ -1,0 +1,28 @@
+.contact-section {
+    padding: 90px 0;
+}
+
+.contact-container {
+    max-width: 1400px;
+    margin: -100px auto 0;
+
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+
+    padding: 60px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+
+    position: relative;
+    z-index: 3;
+}
+
+.contact-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 30px;
+}
