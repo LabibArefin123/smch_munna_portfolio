@@ -1,48 +1,56 @@
 .home-banner {
-    margin-top: -110px; // 🔥 cancels global body padding ONLY here
+    margin-top: -110px; // keep header fix
 }
 
-/* FULL HEIGHT HERO FIX */
+/* FULL HERO */
 #slider {
-    height: calc(100vh); // full screen
-    min-height: 600px;
+    height: calc(100vh);
+    min-height: 620px;
 }
 
-/* overlay for modern feel */
+/* NAVY GRADIENT BACKGROUND */
 .doctor-slide {
     position: relative;
+    background: linear-gradient(135deg, #0b1f3a, #0a2540, #020617);
 
     &::before {
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(to right,
-                rgba(0, 0, 0, 0.6),
-                rgba(0, 0, 0, 0.2));
+
+        /* smooth glow layer */
+        background: radial-gradient(circle at 20% 30%,
+                rgba(59, 130, 246, 0.25),
+                transparent 40%),
+            radial-gradient(circle at 80% 70%,
+                rgba(14, 165, 233, 0.2),
+                transparent 40%);
+
         z-index: 1;
     }
 }
 
+/* TEXT */
 .hero-content {
-
     h2 {
         font-size: 2.6rem;
         font-weight: 700;
-        color: #fff; // 🔥 better contrast
+        color: #fff;
     }
 
     p {
         &:first-of-type {
             font-size: 1.2rem;
-            color: #e5e7eb;
+            color: #cbd5f5;
         }
 
         &:last-of-type {
-            color: #d1d5db;
+            color: #94a3b8;
         }
     }
 }
-/* ensure content above overlay */
+
+/* keep above overlay */
 .hero-content,
 .doctor-img-wrapper {
     position: relative;

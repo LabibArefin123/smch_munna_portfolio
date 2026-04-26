@@ -22,20 +22,19 @@
 .doctor-img-frame {
     position: relative;
 
-    height: 75%;
-    /* 👈 visible area */
-    width: auto;
+    height: 90%; // 🔥 was 75% → causes gap
+    max-height: 520px;
 
     display: flex;
-    align-items: flex-start;
-    /* 👈 TOP ALIGN (KEY FIX) */
+    align-items: flex-end; // 🔥 FIX: anchor bottom properly
     justify-content: center;
 
-    overflow: hidden;
+    overflow: visible;
     border-radius: 28px;
 
     animation: floatDoctor 4s ease-in-out infinite;
 }
+
 /* FLOATING EFFECT */
 @keyframes floatDoctor {
     0% {
@@ -55,18 +54,16 @@
    IMAGE (PORTRAIT STYLE)
 ========================= */
 .doctor-img {
-    height: 120%;
-    /* intentionally bigger to allow crop */
+    height: 100%; // 🔥 was 120%
     width: auto;
-    object-fit: cover;
 
+    object-fit: contain; // 🔥 cleaner than crop
     display: block;
-    border-radius: 24px;
 
+    border-radius: 24px;
     position: relative;
     z-index: 5;
 }
-
 /* =========================
    🔥 BALANCED GRADIENT BORDER
 ========================= */
