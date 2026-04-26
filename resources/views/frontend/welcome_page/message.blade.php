@@ -1,7 +1,4 @@
 <section id="message" class="message-section">
-
-    <link rel="stylesheet" href="{{ asset('css/frontend/custom_message.css') }}">
-
     <div class="container">
 
         <div class="message-wrapper">

@@ -1,0 +1,31 @@
+/* social */
+.footer-social {
+    margin: 15px 0;
+
+    a {
+        color: #fff;
+        margin-right: 10px;
+        font-size: 18px;
+        transition: 0.3s;
+
+        &:hover {
+            color: #ffb400;
+        }
+    }
+}
+
+/* appointment button */
+.footer-appointment-btn {
+    display: inline-block;
+    margin-top: 10px;
+    background: #ffb400;
+    color: #000;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+        background: #ffc93d;
+    }
+}

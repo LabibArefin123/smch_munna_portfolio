@@ -1,0 +1,13 @@
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.active {
+        background: #111;
+        transform: scale(1.2);
+    }
+}

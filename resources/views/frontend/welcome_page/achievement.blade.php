@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="{{ asset('css/frontend/custom_achievement.css') }}">
-
 <section id="achievement" class="achievement-section">
     <div class="container">
 

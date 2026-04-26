@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="{{ asset('css/frontend/custom_philosophy.css') }}">
-
 <section id="individualized-care" class="philosophy-section">
     <div class="container">
 

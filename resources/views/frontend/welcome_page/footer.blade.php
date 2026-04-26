@@ -1,5 +1,4 @@
 <footer class="footer-pro">
-    <link rel="stylesheet" href="{{ asset('css/frontend/custom_footer.css') }}">
     <div class="container">
         <div class="row g-5">
             <!-- Doctor Brand -->

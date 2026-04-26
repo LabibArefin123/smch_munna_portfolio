@@ -1,0 +1,17 @@
+@media (max-width: 992px) {
+
+    .message-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .signature-box {
+        text-align: center;
+    }
+
+    .message-image {
+        img {
+            height: 350px;
+        }
+    }
+}

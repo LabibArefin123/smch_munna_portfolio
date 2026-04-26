@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="{{ asset('css/frontend/custom_banner.css') }}">
-
 <section id="banner" class="banner-section w-100">
     <div id="slider" class="position-relative w-100" style="height:70vh;">
         @php

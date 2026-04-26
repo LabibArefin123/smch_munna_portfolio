@@ -1,0 +1,48 @@
+/* chamber section */
+.footer-chamber {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chamber-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffb400;
+}
+
+/* chamber card */
+.chamber-card {
+    background: #151515;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+
+    &:hover {
+        background: #1c1c1c;
+        transform: translateY(-4px);
+    }
+
+    h6 {
+        color: #fff;
+        margin-bottom: 5px;
+    }
+
+    p {
+        font-size: 13px;
+        opacity: 0.7;
+    }
+
+    span {
+        display: block;
+        font-size: 12px;
+        margin-top: 10px;
+        opacity: 0.8;
+    }
+
+    strong {
+        display: block;
+        color: #ffb400;
+    }
+}
