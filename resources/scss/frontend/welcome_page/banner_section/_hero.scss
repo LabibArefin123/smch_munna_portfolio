@@ -6,8 +6,8 @@
 #slider {
     height: calc(100vh);
     min-height: 620px;
+    display: flex;
 }
-
 /* NAVY GRADIENT BACKGROUND */
 .doctor-slide {
     position: relative;
