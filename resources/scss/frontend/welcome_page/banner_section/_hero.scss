@@ -1,46 +1,68 @@
 .home-banner {
-    margin-top: -110px; // keep header fix
+    margin-top: -110px;
 }
 
-/* FULL HERO */
+/* HERO WRAPPER */
 #slider {
-    height: calc(100vh);
-    min-height: 620px;
-    display: flex;
-}
-/* NAVY GRADIENT BACKGROUND */
-.doctor-slide {
+    height: 80vh;
+    min-height: 650px;
     position: relative;
+}
+
+/* SLIDE */
+.slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: 0.6s;
+
+    &.active {
+        opacity: 1;
+        z-index: 2;
+    }
+}
+
+/* BACKGROUND */
+.doctor-slide {
+    width: 100%;
+    height: 100%;
+
     background: linear-gradient(135deg, #0b1f3a, #0a2540, #020617);
+
+    position: relative;
 
     &::before {
         content: "";
         position: absolute;
         inset: 0;
 
-        /* smooth glow layer */
-        background: radial-gradient(circle at 20% 30%,
-                rgba(59, 130, 246, 0.25),
-                transparent 40%),
-            radial-gradient(circle at 80% 70%,
-                rgba(14, 165, 233, 0.2),
-                transparent 40%);
-
-        z-index: 1;
+        background:
+            radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.25), transparent 40%),
+            radial-gradient(circle at 80% 70%, rgba(14, 165, 233, 0.2), transparent 40%);
     }
+}
+
+/* FIX ROW */
+.banner-row {
+    min-height: 100%;
+    align-items: center;
 }
 
 /* TEXT */
 .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     h2 {
         font-size: 2.6rem;
-        font-weight: 700;
         color: #fff;
     }
 
     p {
         &:first-of-type {
-            font-size: 1.2rem;
             color: #cbd5f5;
         }
 
@@ -50,7 +72,7 @@
     }
 }
 
-/* keep above overlay */
+/* layering */
 .hero-content,
 .doctor-img-wrapper {
     position: relative;

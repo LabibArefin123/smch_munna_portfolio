@@ -1,44 +1,30 @@
 .doctor-img-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
     display: flex;
-    align-items: flex-end;
     justify-content: center;
+    align-items: center;
 }
 
-/* =========================
-   LEFT FLOAT ZONE (75% CROP)
-========================= */
-.image-left-float {
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    overflow: hidden;
-}
-
-/* FRAME HOLDER */
+/* FRAME = CROPPER */
 .doctor-img-frame {
+    width: 100%;
+    max-width: 380px;
+
+    height: 420px; // 🔥 visible area (controls crop)
+    overflow: hidden;
+
+    border-radius: 28px;
     position: relative;
 
-    height: 90%; // 🔥 was 75% → causes gap
-    max-height: 520px;
-
     display: flex;
-    align-items: flex-end; // 🔥 FIX: anchor bottom properly
-    justify-content: center;
-
-    overflow: visible;
-    border-radius: 28px;
+    align-items: flex-start; // 🔥 anchor TOP (important)
 
     animation: floatDoctor 4s ease-in-out infinite;
 }
 
-/* FLOATING EFFECT */
+/* FLOAT */
 @keyframes floatDoctor {
     0% {
-        transform: translateY(0px);
+        transform: translateY(0);
     }
 
     50% {
@@ -46,27 +32,23 @@
     }
 
     100% {
-        transform: translateY(0px);
+        transform: translateY(0);
     }
 }
 
-/* =========================
-   IMAGE (PORTRAIT STYLE)
-========================= */
+/* IMAGE CROPPING LOGIC */
 .doctor-img {
-    height: 100%; // 🔥 was 120%
-    width: auto;
+    width: 100%;
+    height: auto;
 
-    object-fit: contain; // 🔥 cleaner than crop
-    display: block;
+    transform: translateY(0);
+    /* 🔥 show TOP part */
+    /* if needed tweak: translateY(-10%) */
 
-    border-radius: 24px;
-    position: relative;
-    z-index: 5;
+    object-fit: cover;
 }
-/* =========================
-   🔥 BALANCED GRADIENT BORDER
-========================= */
+
+/* GLOW BORDER */
 .doctor-img-frame::before {
     content: "";
     position: absolute;
@@ -74,11 +56,7 @@
     padding: 2px;
     border-radius: 28px;
 
-    background: linear-gradient(120deg,
-            #00f5ff,
-            #7c4dff,
-            #ff4d8d,
-            #00f5ff);
+    background: linear-gradient(120deg, #00f5ff, #7c4dff, #ff4d8d, #00f5ff);
     background-size: 300% 300%;
     animation: borderGlow 5s linear infinite;
 
@@ -87,63 +65,14 @@
         linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-
-    pointer-events: none;
 }
 
-/* SOFT OUTER GLOW */
-.doctor-img-frame::after {
-    content: "";
-    position: absolute;
-    inset: -6px;
-    border-radius: 32px;
-
-    background: linear-gradient(120deg,
-            rgba(0, 245, 255, 0.4),
-            rgba(124, 77, 255, 0.4),
-            rgba(255, 77, 141, 0.4));
-
-    filter: blur(14px);
-    z-index: 0;
-    opacity: 0.7;
-}
-
-/* BORDER ANIMATION */
 @keyframes borderGlow {
     0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
+        background-position: 0%
     }
 
     100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* hover lift */
-.slide.active .doctor-img {
-    transform: scale(1.02);
-}
-
-/* shadow refinement */
-.doctor-image-link img {
-    filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.18));
-}
-
-/* =========================
-   MOBILE FIX
-========================= */
-@media (max-width: 768px) {
-    .doctor-img-frame {
-        height: auto;
-        width: 80%;
-    }
-
-    .doctor-img {
-        height: auto;
-        width: 100%;
+        background-position: 100%
     }
 }
