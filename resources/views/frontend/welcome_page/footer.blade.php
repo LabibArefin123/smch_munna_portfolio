@@ -71,8 +71,8 @@
                 </p>
                 <div class="footer-social">
                     <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
                     <a href="#"><i class="bi bi-youtube"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
                 </div>
                 <a href="{{ route('contact') }}" class="footer-appointment-btn">
                     Book Appointment

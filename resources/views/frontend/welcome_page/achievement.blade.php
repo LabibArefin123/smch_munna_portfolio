@@ -8,15 +8,25 @@
         <div class="achievement-content">
 
             <p>
-                <strong>Dr. Mohammad Faisal Ibn Kabir</strong> is recognized as a respected and experienced
-                cardiologist in Bangladesh, known for his dedication to advanced cardiovascular care and
-                patient-centered treatment. With years of clinical experience in cardiology and internal
-                medicine, he has successfully managed a wide range of complex heart conditions.
+                <strong>
+                    <a href="#" class="doctor-link">
+                        Dr. Mohammad Faisal Ibn Kabir
+                    </a>
+                </strong>
+                is recognized as a respected and experienced cardiologist in Bangladesh,
+                known for his dedication to advanced cardiovascular care and
+                patient-centered treatment.
             </p>
 
             <p>
                 As a Professor and Head of the Department of Cardiology at
-                <strong>MH Samorita Medical College & Hospital</strong>,
+                <strong>
+                    <a href="https://mhsamorita.edu.bd/find-doctor?department=Anesthesiology&name=Assoc.%20Prof.%20Dr.%20Mohammad%20Faisal%20Ibn%20Kabir"
+                       target="_blank"
+                       class="external-link">
+                        MH Samorita Medical College & Hospital
+                    </a>
+                </strong>,
                 he provides comprehensive cardiology services including diagnosis and treatment of
                 coronary artery disease, hypertension, heart failure, arrhythmias, and other
                 cardiovascular disorders.
