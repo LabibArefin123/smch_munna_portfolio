@@ -1,3 +1,4 @@
+
 .gallery-banner {
     position: relative;
     height: 300px; // match service banner
@@ -11,6 +12,22 @@
 
     text-align: center;
     color: #fff;
+}
+
+.gallery-title {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 15px;
+
+    h1 {
+        font-size: 42px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 18px;
+        color: #e4e4e4;
+    }
 }
 
 /* SAME OVERLAY STYLE AS SERVICE */
