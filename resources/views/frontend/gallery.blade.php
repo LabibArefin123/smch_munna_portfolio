@@ -28,7 +28,18 @@
 @section('content')
     @include('frontend.welcome_page.header')
     <div class="gallery-banner" style="background-image: url('{{ asset('uploads/images/welcome_page/cover.png') }}');">
+
         <div class="gallery-overlay"></div>
+
+        <!-- 🔥 NEW TITLE CONTENT (same as service page style) -->
+        <div class="gallery-title">
+            <h1>Photo Gallery</h1>
+            <p>
+                Moments from Surgical Excellence, Patient Care & Medical Events
+            </p>
+        </div>
+
+        <!-- Breadcrumb (keep it) -->
         <div class="gallery-breadcrumb">
             <a href="{{ route('welcome') }}">Home</a>
             <span>></span>

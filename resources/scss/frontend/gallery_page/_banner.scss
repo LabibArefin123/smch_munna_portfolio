@@ -1,38 +1,55 @@
 .gallery-banner {
-    height: 260px;
+    position: relative;
+    height: 300px; // match service banner
     background-size: cover;
     background-position: center;
 
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+
+    text-align: center;
+    color: #fff;
 }
 
+/* SAME OVERLAY STYLE AS SERVICE */
 .gallery-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, #003366cc, #008080cc);
+    background: rgba(0, 0, 0, 0.55); // 🔥 matched with service
 }
 
+/* BREADCRUMB STYLE (KEEP YOUR STYLE BUT IMPROVED) */
 .gallery-breadcrumb {
     position: relative;
     z-index: 2;
 
-    background: rgba(255, 255, 255, 0.15);
-    padding: 12px 28px;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 12px 26px;
     border-radius: 30px;
 
     backdrop-filter: blur(6px);
+
     color: #fff;
     font-size: 15px;
+
+    display: flex;
+    gap: 8px;
+    align-items: center;
 
     a {
         color: #fff;
         text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
 
         &:hover {
-            color: #ffd700;
+            color: #0d6efd; // match service theme color
         }
+    }
+
+    span {
+        opacity: 0.7;
     }
 }
