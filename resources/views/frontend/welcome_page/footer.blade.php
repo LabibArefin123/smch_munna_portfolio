@@ -29,13 +29,13 @@
             <!-- Quick Links -->
 
             <div class="col-lg-2 col-md-6">
-                <h6 class="footer-heading">Profile</h6>
+                <h6 class="footer-heading">Quick Links</h6>
                 <ul class="footer-links">
+                    <li><a href="{{ route('welcome') }}">Home</a></li>
                     <li><a href="{{ route('about') }}">Doctor Profile</a></li>
-                    <li><a href="{{ route('page_1') }}">Education</a></li>
-                    <li><a href="{{ route('page_2') }}">Conferences</a></li>
-                    <li><a href="{{ route('page_3') }}">Publications</a></li>
-                    <li><a href="{{ route('page_4') }}">Membership</a></li>
+                    <li><a href="{{ route('gallery') }}">Gallery</a></li>
+                    <li><a href="{{ route('service') }}">Service</a></li>
+                    <li><a href="{{ route('contact') }}">Contact</a></li>
                 </ul>
             </div>
 
