@@ -20,3 +20,6 @@ import "../scss/frontend/about_page/about.scss";
 import "../scss/frontend/gallery_page/gallery.scss";
 import "../scss/frontend/service_page/service.scss";
 import "../scss/frontend/contact_page/contact.scss";
+
+//custom auth page part
+import "../scss/backend/login_page/login.scss";

@@ -2,9 +2,17 @@
     <div class="container">
 
         <h2 class="section-title">
-            <span>PERSONALIZED CARDIAC CARE</span>
-        </h2>
+            <span class="title-banner">
+                ❤️ PERSONALIZED CARDIAC CARE
 
+                <span class="floating-icons">
+                    <span class="icon heart">❤️</span>
+                    <span class="icon shield">🛡️</span>
+                    <span class="icon pulse">💓</span>
+                </span>
+            </span>
+        </h2>
+        
         <div class="philosophy-content">
             <p>
                 Every patient’s heart health is unique, and effective treatment begins

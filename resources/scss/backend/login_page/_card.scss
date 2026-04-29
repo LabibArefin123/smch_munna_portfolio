@@ -1,0 +1,67 @@
+.login-glass {
+    width: 95%;
+    max-width: 1200px;
+    height: 600px;
+    display: flex;
+    backdrop-filter: blur(18px);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-in-out;
+
+    &.login-active {
+        transform: translateX(0);
+    }
+
+    &.about-active {
+        transform: translateX(-45%);
+    }
+}
+
+.about-slider {
+    width: 55%;
+    padding: 45px;
+    background: hsl(0, 63%, 82%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.about-content {
+    transition: all 0.5s ease;
+
+    &.full {
+        display: none;
+        max-height: 320px;
+        overflow-y: auto;
+        padding-right: 10px;
+
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
+        }
+    }
+}
+
+.login-panel {
+    width: 45%;
+    padding: 55px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hospital-logo {
+    width: 520px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 25px;
+}

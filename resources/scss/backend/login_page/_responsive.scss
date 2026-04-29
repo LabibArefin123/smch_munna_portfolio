@@ -1,0 +1,12 @@
+@media (max-width: 992px) {
+    .login-glass {
+        flex-direction: column;
+        height: auto;
+        transform: none !important;
+    }
+
+    .about-slider,
+    .login-panel {
+        width: 100%;
+    }
+}
