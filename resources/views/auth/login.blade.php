@@ -3,10 +3,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 @section('content')
-    <div class="login-wrapper">
-        <div class="login-glass" id="sliderContainer">
-            @include('auth.custom_login.left')
-            @include('auth.custom_login.right')
+    <div class="login-page">
+
+        <div class="login-wrapper">
+            <div class="login-glass" id="sliderContainer">
+                @include('auth.custom_login.left')
+                @include('auth.custom_login.right')
+            </div>
         </div>
     </div>
     @include('auth.custom_modal.problem')

@@ -39,12 +39,6 @@
             </p>
         </div>
 
-        <!-- Breadcrumb (keep it) -->
-        <div class="gallery-breadcrumb">
-            <a href="{{ route('welcome') }}">Home</a>
-            <span>></span>
-            <a href="{{ route('gallery') }}" class="doc-link text-decoration-none">Gallery</a>
-        </div>
     </div>
     <!-- Page Header -->
     <section class="page-header" style="background: #f7f7f7; padding: 40px 0;">

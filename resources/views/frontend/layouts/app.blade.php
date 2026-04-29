@@ -35,6 +35,14 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @if (Request::is('/') ||
+            Request::is('about') ||
+            Request::is('faq') ||
+            Request::is('gallery') ||
+            Request::is('service') ||
+            Request::is('contact'))
+        @vite('resources/scss/frontend/base/reset.scss')
+    @endif
     <style>
         body {
             visibility: hidden;
