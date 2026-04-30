@@ -12,6 +12,8 @@ use App\Http\Controllers\SystemUserController;
 use App\Http\Controllers\BanUserController;
 use App\Http\Controllers\ContactRequestController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\BannedDeviceController;
+use App\Http\Controllers\UserDeviceController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SystemProblemController;
 
@@ -69,12 +71,16 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/permissions/delete-selected', [PermissionController::class, 'deleteSelected'])->name('permissions.deleteSelected');
     Route::resource('system_users', SystemUserController::class);
     Route::resource('ban_users', BanUserController::class);
+    Route::resource('banned_devices', BannedDeviceController::class);
     Route::post('system-problems/notify/{systemProblem}', [SystemProblemController::class, 'notify'])->name('system_problems.notify');
     Route::post('/system-problems/{id}/remarks', [SystemProblemController::class, 'saveRemarks'])->name('system_problems.remarks');
     Route::resource('system_problems', SystemProblemController::class);
     Route::resource('contact_requests', ContactRequestController::class);
     Route::post('/system-users/{user}/change-password', [SystemUserController::class, 'updatePassword'])->name('system_users.password.update');
-    
+    Route::post('/user_devices/{id}/ban', [UserDeviceController::class, 'ban'])->name('user_devices.ban');
+    Route::post('/user_devices/{id}/unban', [UserDeviceController::class, 'unban'])->name('user_devices.unban');
+    Route::resource('user_devices', UserDeviceController::class);
+    Route::resource('security_logs', SecurityController::class);
     //Setting Routes
     Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
     Route::get('/settings/password_policy', [SettingController::class, 'password_policy'])->name('settings.password_policy');
