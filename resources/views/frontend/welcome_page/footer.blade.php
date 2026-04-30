@@ -89,7 +89,7 @@
             <div class="row g-4">
                 <div class="col-lg-4">
                     <div class="chamber-card">
-                        <h6>Authentic Diagnostic</h6>
+                        <h6>Authentic Diagnostic & Consultation Ltd</h6>
                         <p>Chankharphul, Dhaka</p>
                         <span>Sat • Mon • Wed</span>
                         <strong>3:30 PM – 6:30 PM</strong>
@@ -100,7 +100,7 @@
 
                 <div class="col-lg-4">
                     <div class="chamber-card">
-                        <h6>MH Samorita Hospital</h6>
+                        <h6>MH Samorita Hospital Limited</h6>
                         <p>Tejgaon, Dhaka</p>
                         <span>Morning</span>
                         <strong>9:00 AM – 1:30 PM</strong>
@@ -111,7 +111,7 @@
 
                 <div class="col-lg-4">
                     <div class="chamber-card">
-                        <h6>Popular Diagnostic</h6>
+                        <h6>Popular Diagnostic Center</h6>
                         <p>North Badda, Dhaka</p>
                         <span>Sun • Tue • Thu</span>
                         <strong>8:00 PM – 10:00 PM</strong>
