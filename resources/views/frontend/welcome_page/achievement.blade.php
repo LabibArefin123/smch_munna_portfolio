@@ -2,49 +2,51 @@
     <div class="container">
 
         <h2 class="section-title">
-            <span>LEADING CARDIOLOGIST IN BANGLADESH</span>
+            <span class="title-banner">
+                LEADING CARDIOLOGIST IN BANGLADESH
+            </span>
         </h2>
 
-        <div class="achievement-content">
+        <div class="achievement-card">
+            <div class="achievement-content">
 
-            <p>
-                <strong>
-                    <a href="#" class="doctor-link">
-                        Dr. Mohammad Faisal Ibn Kabir
-                    </a>
-                </strong>
-                is recognized as a respected and experienced cardiologist in Bangladesh,
-                known for his dedication to advanced cardiovascular care and
-                patient-centered treatment.
-            </p>
+                <p>
+                    <strong>
+                        <a href="#" class="doctor-link">
+                            Dr. Mohammad Faisal Ibn Kabir
+                        </a>
+                    </strong>
+                    is recognized as a respected and experienced cardiologist in Bangladesh,
+                    known for his dedication to advanced cardiovascular care and
+                    patient-centered treatment.
+                </p>
 
-            <p>
-                As a Professor and Head of the Department of Cardiology at
-                <strong>
-                    <a href="https://mhsamorita.edu.bd/find-doctor?department=Anesthesiology&name=Assoc.%20Prof.%20Dr.%20Mohammad%20Faisal%20Ibn%20Kabir"
-                       target="_blank"
-                       class="external-link">
-                        MH Samorita Medical College & Hospital
-                    </a>
-                </strong>,
-                he provides comprehensive cardiology services including diagnosis and treatment of
-                coronary artery disease, hypertension, heart failure, arrhythmias, and other
-                cardiovascular disorders.
-            </p>
+                <p>
+                    As a Professor and Head of the Department of Cardiology at
+                    <strong>
+                        <a href="https://mhsamorita.edu.bd/find-doctor?department=Anesthesiology&name=Assoc.%20Prof.%20Dr.%20Mohammad%20Faisal%20Ibn%20Kabir"
+                           target="_blank"
+                           class="external-link">
+                            MH Samorita Medical College & Hospital
+                        </a>
+                    </strong>,
+                    he provides comprehensive cardiology services including diagnosis and treatment of
+                    coronary artery disease, hypertension, heart failure, arrhythmias, and other
+                    cardiovascular disorders.
+                </p>
 
-            <p>
-                Dr. Kabir has received international training in cardiovascular intervention and
-                electrophysiology and continues to contribute to modern cardiac care through
-                evidence-based treatment, advanced diagnostic techniques, and compassionate care
-                for every patient.
-            </p>
+                <p>
+                    Dr. Kabir has received international training in cardiovascular intervention and
+                    electrophysiology and continues to contribute to modern cardiac care through
+                    evidence-based treatment, advanced diagnostic techniques, and compassionate care.
+                </p>
 
-            <p>
-                His commitment to excellence in cardiology has earned the trust of patients seeking
-                reliable heart disease prevention, accurate diagnosis, and effective treatment
-                for long-term cardiovascular health.
-            </p>
+                <p>
+                    His commitment to excellence in cardiology has earned the trust of patients seeking
+                    reliable heart disease prevention, accurate diagnosis, and effective treatment.
+                </p>
 
+            </div>
         </div>
 
     </div>

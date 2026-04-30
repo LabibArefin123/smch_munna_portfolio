@@ -100,7 +100,7 @@
 
                 <div class="col-lg-4">
                     <div class="chamber-card">
-                        <h6>MH Samorita Hospital Limited</h6>
+                        <h6>MH Samorita Hospital & Medical College</h6>
                         <p>Tejgaon, Dhaka</p>
                         <span>Morning</span>
                         <strong>9:00 AM – 1:30 PM</strong>

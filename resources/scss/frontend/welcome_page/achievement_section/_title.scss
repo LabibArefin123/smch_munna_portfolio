@@ -2,13 +2,19 @@
 
     .section-title {
         text-align: center;
-        margin-bottom: 40px;
-        font-weight: 700;
-        letter-spacing: 1px;
+        margin-bottom: 50px;
 
-        span {
+        .title-banner {
             display: inline-block;
-            position: relative;
+            padding: 16px 40px;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            border-radius: 50px;
+
+            background: linear-gradient(135deg, #36d1dc, #5b86e5);
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
     }
 }

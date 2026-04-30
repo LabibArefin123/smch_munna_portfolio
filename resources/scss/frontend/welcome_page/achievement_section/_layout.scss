@@ -6,3 +6,17 @@
         position: relative;
     }
 }
+
+/* 🔥 Force remove any unwanted left lines (ACHIEVEMENT) */
+.achievement-section,
+.achievement-section * {
+    border-left: none !important;
+}
+
+.achievement-section::before,
+.achievement-section::after,
+.achievement-section .container::before,
+.achievement-section .container::after {
+    display: none !important;
+    content: none !important;
+}

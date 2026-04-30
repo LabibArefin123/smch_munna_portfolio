@@ -8,7 +8,7 @@
                     'name' => 'Dr. Mohammad Faisal Ibn Kabir',
                     'designation' => 'Professor & Head of Cardiology',
                     'details' => '
-                    MH Samorita Medical College & Hospital<br>
+                    MH Samorita Hospital & Medical College<br>
                     MD (Cardiology), FCPS (Medicine), MBBS (DMC)<br>
                     Fellowship in Cardiovascular Intervention & Electrophysiology (Beijing, China)<br>
                     Clinical & Interventional Cardiologist
