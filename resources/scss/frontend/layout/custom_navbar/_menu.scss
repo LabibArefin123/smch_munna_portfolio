@@ -37,3 +37,54 @@
         }
     }
 }
+
+.portfolio-menu {
+
+    .dropdown-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        i {
+            font-size: 14px;
+            color: #ff6b6b;
+            transition: 0.2s ease;
+        }
+
+        &:hover i {
+            color: #fff;
+        }
+    }
+}
+
+.portfolio-menu {
+
+    .nav-item.dropdown {
+
+        .d-flex {
+            gap: 0 !important; // remove spacing
+        }
+
+        .nav-link {
+            padding-right: 4px; // tighter text spacing
+        }
+
+        .dropdown-toggle {
+            padding-left: 0;
+            margin-left: -4px; // pull arrow closer
+            display: flex;
+            align-items: center;
+
+            &::after {
+                margin-left: 2px;
+                font-size: 12px;
+            }
+        }
+
+        /* Make hover feel unified */
+        &:hover .nav-link,
+        &:hover .dropdown-toggle {
+            color: #111;
+        }
+    }
+}

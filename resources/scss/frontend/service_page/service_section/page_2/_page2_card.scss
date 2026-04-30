@@ -1,0 +1,40 @@
+.service-card-two {
+    background: $white-two;
+    padding: 45px;
+    border-radius: $radius-two;
+    box-shadow: $shadow-two;
+    transition: $transition-two;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+    }
+
+    h4 {
+        margin-top: 25px;
+        color: $secondary-color-two;
+    }
+
+    p {
+        color: $light-text-two;
+        line-height: 1.7;
+    }
+
+    ul {
+        margin-top: 20px;
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+
+            &::before {
+                content: "✔";
+                position: absolute;
+                left: 0;
+                color: $primary-color-two;
+                font-weight: bold;
+            }
+        }
+    }
+}

@@ -18,6 +18,12 @@ import "../scss/frontend/welcome_page/message_section/message.scss";
 import "../scss/frontend/about_page/about.scss";
 import "../scss/frontend/gallery_page/gallery.scss";
 import "../scss/frontend/service_page/service.scss";
+import "../scss/frontend/service_page/service_section/page_1/page_1.scss";
+import "../scss/frontend/service_page/service_section/page_2/page_2.scss";
+import "../scss/frontend/service_page/service_section/page_3/page_3.scss";
+import "../scss/frontend/service_page/service_section/page_4/page_4.scss";
+import "../scss/frontend/service_page/service_section/page_5/page_5.scss";
+import "../scss/frontend/service_page/service_section/page_6/page_6.scss";
 import "../scss/frontend/contact_page/contact.scss";
 
 import "../js/custom_frontend/login_page/problem.js";

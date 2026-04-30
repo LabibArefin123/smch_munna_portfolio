@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg portfolio-navbar fixed-top">
     <div class="container">
 
@@ -39,11 +38,62 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="{{ route('service') }}"
-                        class="nav-link {{ request()->routeIs('service') ? 'active' : '' }}">
-                        Services
-                    </a>
+                <li class="nav-item dropdown">
+
+                    <div class="d-flex align-items-center gap-1">
+
+                        <!-- MAIN LINK (clickable) -->
+                        <a href="{{ route('service') }}"
+                            class="nav-link {{ request()->routeIs('service') ? 'active' : '' }}">
+                            Services
+                        </a>
+
+                        <!-- DROPDOWN TOGGLE (separate click) -->
+                        <a href="#" class="nav-link dropdown-toggle p-0" id="servicesDropdown" role="button"
+                            aria-expanded="false">
+                        </a>
+
+                    </div>
+
+                    <ul class="dropdown-menu text-center" aria-labelledby="servicesDropdown">
+
+                        <li>
+                            <a class="dropdown-item" href="{{ route('cardiology_page_1') }}">
+                                <i class="bi bi-heart-pulse"></i> Heart Disease Diagnosis
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="{{ route('cardiology_page_2') }}">
+                                <i class="bi bi-person-check"></i> Cardiology Consultation
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="{{ route('cardiology_page_3') }}">
+                                <i class="bi bi-activity"></i> Interventional Cardiology
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="{{ route('cardiology_page_4') }}">
+                                <i class="bi bi-graph-up-arrow"></i> Hypertension Management
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="{{ route('cardiology_page_5') }}">
+                                <i class="bi bi-shield-check"></i> Preventive Cardiology
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="{{ route('cardiology_page_6') }}">
+                                <i class="bi bi-clipboard2-pulse"></i> Cardiac Risk Assessment
+                            </a>
+                        </li>
+
+                    </ul>
                 </li>
 
                 <li class="nav-item">

@@ -1,0 +1,27 @@
+.service-card-one {
+    background: $white-one;
+    padding: 40px;
+    border-radius: $radius-one;
+    box-shadow: $shadow-one;
+    transition: $transition-one;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    ul {
+        margin-top: 20px;
+
+        li {
+            padding-left: 20px;
+            position: relative;
+
+            &::before {
+                content: "✔";
+                position: absolute;
+                left: 0;
+                color: $primary-color-one;
+            }
+        }
+    }
+}

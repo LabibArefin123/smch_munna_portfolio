@@ -19,8 +19,7 @@
     @hasSection('meta')
         @yield('meta')
     @else
-        <meta name="description"
-            content="Dr. Asif Almas Haque is a leading colorectal surgeon in Bangladesh specializing in piles, fissure, fistula and colorectal cancer treatment.">
+      <meta name="description" content="@yield('meta_description', 'Best cardiology services including diagnosis, consultation, interventional cardiology, and heart risk assessment.')">
         <link rel="canonical" href="{{ url()->current() }}">
     @endif
 
@@ -112,6 +111,7 @@
     {{-- End of Contact Succss Swal Notification --}}
 
     <script src="{{ asset('js/custom_frontend/fouc_load.js') }}"></script> {{-- FOUC Load JS --}}
+    <script src="{{ asset('js/custom_frontend/navbar-dropdown.js') }}"></script> {{-- FOUC Load JS --}}
     <script src="{{ asset('js/custom_frontend/phone.js') }}"></script> {{-- Phone Modal JS --}}
     <script src="{{ asset('js/custom_frontend/email.js') }}"></script> {{-- Email Modal JS --}}
     <script src="{{ asset('js/custom_frontend/location.js') }}"></script> {{-- Location Modal JS --}}
