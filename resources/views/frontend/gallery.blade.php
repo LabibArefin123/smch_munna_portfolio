@@ -40,12 +40,6 @@
         </div>
 
     </div>
-    <!-- Page Header -->
-    <section class="page-header" style="background: #f7f7f7; padding: 40px 0;">
-        <div class="container">
-            <h1 class="text-center" style="font-weight: 700;">Photo Gallery</h1>
-        </div>
-    </section>
 
     <!-- Gallery Section -->
     <section class="gallery-section py-5">
