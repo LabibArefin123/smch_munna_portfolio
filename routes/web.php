@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActivityLogController;
 use App\Http\Controllers\WelcomePageController;
 use App\Http\Controllers\OrganizationController;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,10 @@ Route::get('/user_profile', function () {
 
 //Route::group(['middleware' => ['auth', 'permission']], function () {
 Route::group(['middleware' => 'auth'], function () {
+
+    //Activity Log Menu
+    Route::get('/activity-logs', [ActivityLogController::class, 'index'])->name('activity.logs.index');
+    Route::delete('/activity-logs/{id}', [ActivityLogController::class, 'destroy'])->name('activity.logs.destroy');
 
     // Profile Routes
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

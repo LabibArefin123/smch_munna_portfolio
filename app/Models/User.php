@@ -8,10 +8,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Spatie\Permission\Traits\HasRoles;
+use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Activitylog\LogOptions;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, HasRoles;
+    use HasFactory, Notifiable, HasRoles, LogsActivity;
 
     protected $fillable = [
         'name',
@@ -25,9 +28,12 @@ class User extends Authenticatable
         'two_factor_code',
         'two_factor_expires_at',
         'session_timeout',
+        'last_seen',
         'is_maintenance',
         'is_banned',
         'maintenance_message',
+        'is_notifications',
+        'is_debugbar',
     ];
 
     protected $hidden = [
@@ -39,6 +45,7 @@ class User extends Authenticatable
     {
         return [
             'email_verified_at' => 'datetime',
+            'last_seen' => 'datetime',
         ];
     }
 
@@ -96,5 +103,36 @@ class User extends Authenticatable
         } catch (\Exception $e) {
             return null;
         }
+    }
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+            ->logOnly(['name', 'email'])
+            ->logOnlyDirty()
+            ->dontSubmitEmptyLogs()
+            ->useLogName('User')
+            ->setDescriptionForEvent(function (string $eventName) {
+                return match ($eventName) {
+                    'created' => 'User created',
+                    'deleted' => 'User deleted',
+                    'updated' => 'User updated', // must return string
+                    default => 'User activity',  // ❗ NEVER return null
+                };
+            });
+    }
+
+    protected static function booted()
+    {
+        static::updating(function ($user) {
+            if ($user->isDirty('last_seen') && count($user->getDirty()) === 1) {
+                return false; // ❌ stop logging last_seen updates
+            }
+        });
+    }
+
+    public function getIsOnlineAttribute()
+    {
+        return $this->last_seen && $this->last_seen->gt(now()->subMinutes(5));
     }
 }
