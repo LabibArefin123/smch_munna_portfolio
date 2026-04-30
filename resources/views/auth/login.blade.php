@@ -15,6 +15,4 @@
     @include('auth.custom_modal.problem')
     {{-- Password show  JS --}}
     <script src="{{ asset('js/custom_frontend/login_page/password.js') }}"></script>
-    {{-- Problem modal show  JS --}}
-    <script src="{{ asset('js/custom_frontend/login_page/problem-modal.js') }}"></script>
 @endsection

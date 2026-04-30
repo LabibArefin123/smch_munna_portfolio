@@ -19,3 +19,5 @@ import "../scss/frontend/about_page/about.scss";
 import "../scss/frontend/gallery_page/gallery.scss";
 import "../scss/frontend/service_page/service.scss";
 import "../scss/frontend/contact_page/contact.scss";
+
+import "../js/custom_frontend/login_page/problem.js";

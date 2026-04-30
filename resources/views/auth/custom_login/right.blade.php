@@ -61,8 +61,7 @@
          <hr class="my-4">
 
          <div class="text-center">
-             <a href="javascript:void(0)" onclick="openProblemModal()"
-                 class="text-decoration-none dev-link fw-semibold">
+             <a href="javascript:void(0)" id="openProblemBtn" class="text-decoration-none dev-link fw-semibold">
                  ⚠ Facing a system problem?
              </a>
              <p class="text-muted small mt-1">
