@@ -114,13 +114,13 @@
             });
 
             // Catch column mismatch / JSON issues
-            table.on('error.dt', function(e, settings, techNote, message) {
-                console.error('DataTable Tech Error:', message);
-                showDtToast(
-                    'A system configuration issue was detected. ' +
-                    'Please notify the technical team.'
-                );
-            });
+            // table.on('error.dt', function(e, settings, techNote, message) {
+            //     console.error('DataTable Tech Error:', message);
+            //     showDtToast(
+            //         'A system configuration issue was detected. ' +
+            //         'Please notify the technical team.'
+            //     );
+            // });
 
             // Notify button click
             $(document).on('click', '.notify-btn', function() {

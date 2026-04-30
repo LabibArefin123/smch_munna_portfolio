@@ -64,6 +64,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/permissions/delete-selected', [PermissionController::class, 'deleteSelected'])->name('permissions.deleteSelected');
     Route::resource('system_users', SystemUserController::class);
     Route::resource('ban_users', BanUserController::class);
+    Route::post('system-problems/notify/{systemProblem}', [SystemProblemController::class, 'notify'])->name('system_problems.notify');
+    Route::post('/system-problems/{id}/remarks', [SystemProblemController::class, 'saveRemarks'])->name('system_problems.remarks');
     Route::resource('system_problems', SystemProblemController::class);
     Route::resource('contact_requests', ContactRequestController::class);
     Route::post('/system-users/{user}/change-password', [SystemUserController::class, 'updatePassword'])->name('system_users.password.update');

@@ -181,31 +181,7 @@
         </div>
         <!-- end of delete animation model -->
 
-        <!-- Start Limit Warning Modal -->
-        {{-- <div class="modal fade" id="limitWarningModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content text-center p-4">
-
-                    <div class="mb-3">
-                        <div class="limit-icon">!</div>
-                    </div>
-
-                    <h4 class="text-danger fw-bold">
-                        Maximum Limit Reached
-                    </h4>
-
-                    <p class="text-muted mb-3">
-                        This report is limited to <strong>500 records</strong>.<br>
-                        Please contact the developer for larger data export.
-                    </p>
-
-                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">
-                        Close
-                    </button>
-                </div>
-            </div>
-        </div> --}}
-        <!-- End of Limit Warning Modal -->
+      
 
         {{-- Preloader --}}
         @if ($preloaderHelper->isPreloaderEnabled())
