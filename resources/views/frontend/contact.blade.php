@@ -53,7 +53,11 @@
         </div>
 
     </div>
-
+    <section class="page-header" style="background: #f7f7f7; padding: 40px 0;">
+        <div class="container">
+            <h1 class="text-center" style="font-weight: 700;">Contact Us</h1>
+        </div>
+    </section>
     <section class="contact-section">
         <div class="contact-container">
             <!-- Appointment Form -->
