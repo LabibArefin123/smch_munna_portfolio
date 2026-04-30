@@ -46,6 +46,31 @@ class WelcomePageController extends Controller
         return view('frontend.contact');
     }
 
+    public function cardiology_page_1()
+    {
+        return view('frontend.service_page.heart_diagnosis');
+    }
+    public function cardiology_page_2()
+    {
+        return view('frontend.service_page.cardiology');
+    }
+    public function cardiology_page_3()
+    {
+        return view('frontend.service_page.interventional');
+    }
+    public function cardiology_page_4()
+    {
+        return view('frontend.service_page.hypertension');
+    }
+    public function cardiology_page_5()
+    {
+        return view('frontend.service_page.preventive');
+    }
+    public function cardiology_page_6()
+    {
+        return view('frontend.service_page.risk_assessment');
+    }
+
     public function system_problem_store(Request $request)
     {
         $request->validate([

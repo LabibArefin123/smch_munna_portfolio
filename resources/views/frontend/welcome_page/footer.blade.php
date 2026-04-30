@@ -44,12 +44,12 @@
             <div class="col-lg-3 col-md-6">
                 <h6 class="footer-heading">Cardiology Services</h6>
                 <ul class="footer-links">
-                    <li>Heart Disease Diagnosis</li>
-                    <li>Cardiology Consultation</li>
-                    <li>Interventional Cardiology</li>
-                    <li>Hypertension Management</li>
-                    <li>Preventive Cardiology</li>
-                    <li>Cardiac Risk Assessment</li>
+                    <li><a href="{{ route('cardiology_page_1') }}">Heart Disease Diagnosis</a></li>
+                    <li><a href="{{ route('cardiology_page_2') }}">Cardiology Consultation</a></li>
+                    <li><a href="{{ route('cardiology_page_3') }}">Interventional Cardiology</a></li>
+                    <li><a href="{{ route('cardiology_page_4') }}">Hypertension Management</a></li>
+                    <li><a href="{{ route('cardiology_page_5') }}">Preventive Cardiology</a></li>
+                    <li><a href="{{ route('cardiology_page_6') }}">Cardiac Risk Assessment</a></li>
                 </ul>
             </div>
 

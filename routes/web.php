@@ -14,6 +14,7 @@ use App\Http\Controllers\ContactRequestController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\BannedDeviceController;
 use App\Http\Controllers\UserDeviceController;
+use App\Http\Controllers\SecurityController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SystemProblemController;
 
@@ -31,6 +32,13 @@ Route::get('/faq', [WelcomePageController::class, 'faq'])->name('faq');
 //Gallery Section
 Route::get('/gallery', [WelcomePageController::class, 'gallery'])->name('gallery');
 Route::get('/service', [WelcomePageController::class, 'service'])->name('service');
+
+Route::get('/heart_disease_diagnosis', [WelcomePageController::class, 'cardiology_page_1'])->name('cardiology_page_1');
+Route::get('/cardiology_consultation', [WelcomePageController::class, 'cardiology_page_2'])->name('cardiology_page_2');
+Route::get('/interventional_cardiology', [WelcomePageController::class, 'cardiology_page_3'])->name('cardiology_page_3');
+Route::get('/hypertension_management', [WelcomePageController::class, 'cardiology_page_4'])->name('cardiology_page_4');
+Route::get('/preventive_cardiology', [WelcomePageController::class, 'cardiology_page_5'])->name('cardiology_page_5');
+Route::get('/cardiac_risk_assessment', [WelcomePageController::class, 'cardiology_page_6'])->name('cardiology_page_6');
 
 //Contact Section
 Route::get('/contact', [WelcomePageController::class, 'contact'])->name('contact');
