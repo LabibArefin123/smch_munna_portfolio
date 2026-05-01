@@ -58,7 +58,6 @@ Route::get('/user_profile', function () {
 require __DIR__ . '/auth.php';
 Route::middleware('guest')->group(function () {
     Route::get('/login', [LoginController::class, 'showLoginForm'])
-        ->middleware('developer.mode')
         ->name('login');
 
     Route::post('/login', [LoginController::class, 'login']);
