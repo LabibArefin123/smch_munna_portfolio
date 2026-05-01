@@ -17,7 +17,7 @@ use App\Http\Controllers\UserDeviceController;
 use App\Http\Controllers\SecurityController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SystemProblemController;
-
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 //Welcome Section
@@ -49,8 +49,31 @@ Route::get('/user_profile', function () {
     return view('user_profile');
 })->middleware(['auth', 'verified'])->name('profile');
 
+/*
+|--------------------------------------------------------------------------
+| Authentication Routes
+|--------------------------------------------------------------------------
+*/
+
+require __DIR__ . '/auth.php';
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [LoginController::class, 'showLoginForm'])
+        ->middleware('developer.mode')
+        ->name('login');
+
+    Route::post('/login', [LoginController::class, 'login']);
+});
+
+Route::post('/logout', function () {
+    Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+
+    return redirect('/');
+})->name('logout');
+
 //Route::group(['middleware' => ['auth', 'permission']], function () {
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => ['auth', 'check_banned_device', 'detect.attack']], function () {
 
     //Activity Log Menu
     Route::get('/activity-logs', [ActivityLogController::class, 'index'])->name('activity.logs.index');
@@ -111,7 +134,3 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/settings/theme', [SettingController::class, 'theme'])->name('settings.theme');
     Route::post('/settings/theme/update', [SettingController::class, 'updateTheme'])->name('settings.theme.update');
 });
-
-Auth::routes([
-    'register' => false, // disables register
-]);
