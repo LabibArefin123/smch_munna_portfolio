@@ -115,7 +115,7 @@
 
                 <div class="info-item">
                     <strong>Hospital</strong>
-                    <p>MH Samorita Medical College and Hospital</p>
+                    <p>MH Samorita Hospital & Medical College</p>
                 </div>
 
                 <div class="info-item">
@@ -131,7 +131,7 @@
                 <div class="info-item">
                     <strong>Consultation Locations</strong>
                     <p>Authentic Diagnostic & Consultation Ltd.</p>
-                    <p>MH Samorita Medical College & Hospital</p>
+                    <p>MH Samorita Hospital& Medical College</p>
                     <p>Popular Diagnostic Centre (Badda)</p>
                 </div>
             </div>

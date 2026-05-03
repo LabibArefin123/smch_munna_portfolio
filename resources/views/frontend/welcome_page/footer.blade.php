@@ -11,7 +11,7 @@
                     Professor & Head, Department of Cardiology
                 </p>
                 <p class="footer-hospital">
-                    MH Samorita Medical College & Hospital
+                   MH Samorita Hospital & Medical College
                 </p>
 
                 <div class="footer-degree">

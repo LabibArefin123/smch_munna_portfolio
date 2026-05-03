@@ -38,7 +38,7 @@
     @include('frontend.welcome_page.header')
     <div class="doctor-banner" style="background-image: url('{{ asset('uploads/images/welcome_page/cover.png') }}');">
 
-    <div class="doctor-overlay"></div>
+        <div class="doctor-overlay"></div>
         <!-- Title Content -->
         <div class="doctor-title">
             <h1>About Dr. Mohammad Faisal Ibn Kabir</h1>
@@ -74,7 +74,7 @@
 
                     <p class="doctor-designation">
                         Professor & Head of the Department of Cardiology<br>
-                        MH Samorita Medical College and Hospital
+                        MH Samorita Hospital & Medical College
                     </p>
 
                     <p>
@@ -99,8 +99,8 @@
                     <h5 class="section-title">About Doctor</h5>
                     <p>
                         Dr. Mohammad Faisal Ibn Kabir is a highly experienced Clinical and Interventional Cardiologist
-                        currently serving as the Professor and Head of the Department of Cardiology at MH Samorita Medical
-                        College and Hospital.
+                        currently serving as the Professor and Head of the Department of Cardiology at MH Samorita Hospital
+                        & Medical College.
                     </p>
 
                     <p>
