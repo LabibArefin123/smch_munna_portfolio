@@ -3,12 +3,17 @@
 @section('title', 'Dr. Mohammad Faisal Ibn Kabir | Best Colorectal Surgeon in Bangladesh')
 
 @section('meta')
+    <!-- Primary SEO -->
+    <meta name="title" content="Dr. Mohammad Faisal Ibn Kabir | Best Cardiologist in Bangladesh">
+
     <meta name="description"
-        content="Dr. Asif Almas Haque is a leading colorectal, laparoscopic and laser surgeon in Bangladesh. Specialist in piles, fissure, fistula, IBS and colorectal cancer treatment in Dhaka.">
-    <meta property="og:title" content="Dr. Asif Almas Haque | Best Colorectal Surgeon in Bangladesh">
+        content="Dr. Mohammad Faisal Ibn Kabir is a leading cardiologist in Bangladesh specializing in heart disease diagnosis, interventional cardiology, hypertension management, preventive cardiology, ECG, echocardiography and advanced heart care in Dhaka.">
+    <meta property="og:title" content="Dr. Mohammad Faisal Ibn Kabir | Leading Cardiologist in Bangladesh">
+
     <meta property="og:description"
-        content="Expert colorectal surgeon in Dhaka specializing in piles, fissure, fistula and colorectal cancer surgery.">
-    <meta property="og:image" content="{{ asset('uploads/images/welcome_page/doctors/image_2.jpg') }}">
+        content="Expert cardiology consultation and advanced heart care in Dhaka including interventional cardiology, hypertension treatment and preventive cardiac services.">
+
+    <meta property="og:image" content="{{ asset('uploads/images/welcome_page/slider/image.jpeg') }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
 @endsection
