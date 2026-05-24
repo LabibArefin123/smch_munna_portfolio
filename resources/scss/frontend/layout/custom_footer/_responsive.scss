@@ -1,0 +1,222 @@
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .footer-pro {
+        padding: 70px 0 40px;
+    }
+
+    .footer-pro .row.g-5 {
+        row-gap: 40px !important;
+    }
+
+    .footer-heading {
+        margin-bottom: 18px;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+
+    .footer-appointment-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .chamber-card {
+        height: 100%;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .footer-pro {
+        padding: 55px 0 30px;
+        text-align: center;
+    }
+
+    /* brand */
+    .footer-doctor-name {
+        font-size: 24px;
+        line-height: 1.35;
+    }
+
+    .footer-title {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .footer-hospital {
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+
+    .footer-degree {
+        margin-top: 10px;
+
+        span {
+            font-size: 13px;
+            line-height: 1.7;
+        }
+    }
+
+    /* section spacing */
+    .footer-heading {
+        margin-top: 8px;
+        margin-bottom: 18px;
+        font-size: 17px;
+    }
+
+    /* links */
+    .footer-links {
+
+        li {
+            margin-bottom: 14px;
+        }
+
+        a {
+            display: inline-block;
+            font-size: 14px;
+
+            &:hover {
+                padding-left: 0;
+                transform: translateY(-1px);
+            }
+        }
+    }
+
+    /* contact */
+    .footer-contact {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+
+        gap: 10px;
+
+        font-size: 14px;
+        line-height: 1.7;
+
+        margin-bottom: 14px;
+
+        i {
+            margin-right: 0;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+    }
+
+    /* social */
+    .footer-social {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        gap: 12px;
+
+        margin: 22px 0;
+
+        a {
+            margin-right: 0;
+        }
+    }
+
+    /* appointment button */
+    .footer-appointment-btn {
+        width: 100%;
+        max-width: 280px;
+
+        padding: 12px 18px;
+
+        font-size: 14px;
+
+        border-radius: 14px;
+    }
+
+    /* chamber section */
+    .footer-chamber {
+        margin-top: 50px;
+        padding-top: 30px;
+    }
+
+    .chamber-title {
+        font-size: 22px;
+        margin-bottom: 25px;
+    }
+
+    .chamber-card {
+        padding: 22px 18px;
+
+        border-radius: 18px;
+
+        text-align: left;
+
+        h6 {
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        p {
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        span {
+            font-size: 12px;
+            margin-top: 12px;
+        }
+
+        strong {
+            font-size: 14px;
+            margin-top: 4px;
+        }
+    }
+
+    /* footer bottom */
+    .footer-bottom {
+        margin-top: 40px;
+
+        padding-top: 18px;
+
+        font-size: 12px;
+        line-height: 1.7;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .footer-pro {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .footer-doctor-name {
+        font-size: 21px;
+    }
+
+    .footer-title {
+        font-size: 14px;
+    }
+
+    .footer-heading {
+        font-size: 16px;
+    }
+
+    .chamber-card {
+        padding: 18px 16px;
+    }
+
+    .footer-social a {
+        width: 42px;
+        height: 42px;
+    }
+}
