@@ -1,0 +1,73 @@
+.location-ride-actions {
+    display: grid;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.location-ride-btn {
+    align-items: center;
+    border: 0;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    gap: 9px;
+    justify-content: center;
+    line-height: 1.2;
+    min-height: 42px;
+    padding: 10px 14px;
+    text-decoration: none;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+    width: 100%;
+}
+
+.location-ride-btn:hover,
+.location-ride-btn:focus {
+    color: #fff;
+    opacity: 0.92;
+    transform: translateY(-1px);
+}
+
+.location-ride-btn:focus {
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.2);
+    outline: none;
+}
+
+.location-ride-btn i {
+    font-size: 15px;
+}
+
+.location-ride-btn-uber {
+    background: #111;
+}
+
+.location-ride-btn-pathao {
+    background: #e8202a;
+}
+
+.location-ride-btn-map {
+    background: #0d6efd;
+}
+
+.location-ride-btn.is-disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+    transform: none;
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .location-ride-actions {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 992px) {
+    .location-ride-actions {
+        grid-template-columns: 1fr;
+    }
+}

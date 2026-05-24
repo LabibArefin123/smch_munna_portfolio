@@ -29,14 +29,33 @@
                 <div class="location-item">
                     <i class="fas fa-clock text-warning"></i>
                     <span>
-                        Sat-Mon-Wed: 3:30 PM – 6:30 PM<br>
-                        Sun-Tue-Thu: 3:30 PM – 8:00 PM
+                        Sat-Mon-Wed: 3:30 PM - 6:30 PM<br>
+                        Sun-Tue-Thu: 3:30 PM - 8:00 PM
                     </span>
                 </div>
 
                 <div class="location-item">
                     <i class="fas fa-envelope text-danger"></i>
                     <span>autehnticmedi2018@gmail.com</span>
+                </div>
+
+                <div class="location-ride-actions"
+                    data-location-name="Authentic Diagnostic & Consultation Ltd"
+                    data-location-address="71/4 Hoseni Dalan Road, Chankharphul, Dhaka-1211">
+                    <button type="button" class="location-ride-btn location-ride-btn-uber" data-ride-action="uber">
+                        <i class="fas fa-car"></i>
+                        <span>Ride with Uber</span>
+                    </button>
+
+                    <button type="button" class="location-ride-btn location-ride-btn-pathao" data-ride-action="pathao">
+                        <i class="fas fa-motorcycle"></i>
+                        <span>Ride with Pathao</span>
+                    </button>
+
+                    <button type="button" class="location-ride-btn location-ride-btn-map" data-ride-action="map">
+                        <i class="fas fa-map-location-dot"></i>
+                        <span>Go to Google Map</span>
+                    </button>
                 </div>
 
             </div>

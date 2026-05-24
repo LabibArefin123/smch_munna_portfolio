@@ -21,7 +21,25 @@
 
                 <div class="location-item">
                     <i class="fas fa-clock text-warning"></i>
-                    <span>Sun-Tue-Thu: 8:00 AM – 10:00 PM</span>
+                    <span>Sun-Tue-Thu: 8:00 AM - 10:00 PM</span>
+                </div>
+
+                <div class="location-ride-actions" data-location-name="Popular Diagnostic Centre Ltd (Badda)"
+                    data-location-address="Cha-90/2 Bir Uttam Rafiqul Islam Road, North Badda, Pragati Swarani, Dhaka-1212">
+                    <button type="button" class="location-ride-btn location-ride-btn-uber" data-ride-action="uber">
+                        <i class="fas fa-car"></i>
+                        <span>Ride with Uber</span>
+                    </button>
+
+                    <button type="button" class="location-ride-btn location-ride-btn-pathao" data-ride-action="pathao">
+                        <i class="fas fa-motorcycle"></i>
+                        <span>Ride with Pathao</span>
+                    </button>
+
+                    <button type="button" class="location-ride-btn location-ride-btn-map" data-ride-action="map">
+                        <i class="fas fa-map-location-dot"></i>
+                        <span>Go to Google Map</span>
+                    </button>
                 </div>
 
             </div>

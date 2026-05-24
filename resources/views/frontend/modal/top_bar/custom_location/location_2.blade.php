@@ -31,9 +31,27 @@
                 <div class="location-item">
                     <i class="fas fa-clock text-warning"></i>
                     <span>
-                        Daily: 9:00 AM – 1:30 PM<br>
-                        Sun-Tue-Thu: 8:30 PM – 10:00 PM
+                        Daily: 9:00 AM - 1:30 PM<br>
+                        Sun-Tue-Thu: 8:30 PM - 10:00 PM
                     </span>
+                </div>
+
+                <div class="location-ride-actions" data-location-name="MH Samorita Medical College & Hospital"
+                    data-location-address="117 Tejgaon Love Road, Dhaka-1208">
+                    <button type="button" class="location-ride-btn location-ride-btn-uber" data-ride-action="uber">
+                        <i class="fas fa-car"></i>
+                        <span>Ride with Uber</span>
+                    </button>
+
+                    <button type="button" class="location-ride-btn location-ride-btn-pathao" data-ride-action="pathao">
+                        <i class="fas fa-motorcycle"></i>
+                        <span>Ride with Pathao</span>
+                    </button>
+
+                    <button type="button" class="location-ride-btn location-ride-btn-map" data-ride-action="map">
+                        <i class="fas fa-map-location-dot"></i>
+                        <span>Go to Google Map</span>
+                    </button>
                 </div>
 
             </div>

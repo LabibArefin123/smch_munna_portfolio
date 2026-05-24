@@ -86,6 +86,7 @@
     }
 </style>
 
+<link rel="stylesheet" href="{{ asset('css/frontend/modals/custom_location_ride.css') }}">
 
 <div class="modal fade" id="locationModal" tabindex="-1">
     <div class="modal-dialog modal-xl modal-dialog-centered">
@@ -133,9 +134,11 @@
                     @include('frontend.modal.top_bar.custom_location.location_2')
                     <!-- LOCATION 3 -->
                     @include('frontend.modal.top_bar.custom_location.location_3')
-                    
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script src="{{ asset('js/custom_frontend/location-ride.js') }}"></script>
