@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg portfolio-navbar fixed-top">
+<nav class="navbar navbar-expand-lg portfolio-navbar d-flex">
     <div class="container">
 
         <!-- BRAND -->

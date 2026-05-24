@@ -1,7 +1,13 @@
 .portfolio-navbar {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(14px);
+    position: fixed;
     top: 40px;
-    // z-index: 1030;
+    left: 0;
+    width: 100%;
+    z-index: 1055;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
 }

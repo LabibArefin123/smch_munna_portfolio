@@ -19,7 +19,7 @@
     @hasSection('meta')
         @yield('meta')
     @else
-      <meta name="description" content="@yield('meta_description', 'Best cardiology services including diagnosis, consultation, interventional cardiology, and heart risk assessment.')">
+        <meta name="description" content="@yield('meta_description', 'Best cardiology services including diagnosis, consultation, interventional cardiology, and heart risk assessment.')">
         <link rel="canonical" href="{{ url()->current() }}">
     @endif
 
@@ -34,14 +34,7 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    @if (Request::is('/') ||
-            Request::is('about') ||
-            Request::is('faq') ||
-            Request::is('gallery') ||
-            Request::is('service') ||
-            Request::is('contact'))
-        @vite('resources/scss/frontend/base/reset.scss')
-    @endif
+
     <style>
         body {
             visibility: hidden;
@@ -62,7 +55,7 @@
             style="position: fixed; top: 0; left: 0; width: 0%; height: 4px; background-color: #ff6b6b; z-index: 9999; transition: width 0.25s ease;">
         </div>
 
-        <main>
+        <main class="main-content">
             @yield('content')
         </main>
 

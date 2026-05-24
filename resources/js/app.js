@@ -6,6 +6,8 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
+/* RESET */
+import "../scss/frontend/base/reset.scss";
 import "../scss/frontend/layout/custom_navbar/navbar.scss";
 import "../scss/frontend/layout/custom_topbar/topbar.scss";
 import "../scss/frontend/layout/custom_footer/footer.scss";
