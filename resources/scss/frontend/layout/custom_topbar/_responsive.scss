@@ -1,17 +1,43 @@
 @media (max-width: 768px) {
 
     .portfolio-topbar {
+
+        padding: 6px 0;
+
         .container {
             flex-direction: column;
-            gap: 6px;
+            gap: 4px;
+            align-items: center;
         }
     }
 
     .top-info {
         justify-content: center;
+        gap: 8px;
+
+        font-size: 11px;
+        text-align: center;
+    }
+
+    .top-link {
+        font-size: 11px;
+    }
+
+    .divider {
+        display: none;
     }
 
     .top-social {
         justify-content: center;
+        gap: 10px;
+    }
+
+    .social-icon {
+        font-size: 13px;
+    }
+
+    .lang-btn {
+        padding: 3px 10px;
+        font-size: 11px;
     }
 }

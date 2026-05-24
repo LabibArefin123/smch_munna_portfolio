@@ -1,18 +1,13 @@
 @media (max-width: 991px) {
 
     .portfolio-navbar {
-
+        top: 88px;
         padding: 12px 0;
-
         .navbar-collapse {
             background: #fff;
-
             margin-top: 16px;
-
             padding: 20px;
-
             border-radius: 18px;
-
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
     }
@@ -20,7 +15,6 @@
     .portfolio-menu {
 
         text-align: left;
-
         .nav-link {
             padding: 12px 14px;
         }
