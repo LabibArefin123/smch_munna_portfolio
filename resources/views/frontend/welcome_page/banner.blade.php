@@ -1,5 +1,5 @@
 <section id="banner" class="home-banner">
-<div id="slider" class="position-relative w-100">
+    <div id="slider" class="position-relative w-100">
         @php
             $slides = [
                 [
@@ -19,8 +19,7 @@
         @endphp
 
         @foreach ($slides as $index => $slide)
-            <div class="slide {{ $index === 0 ? 'active' : '' }}" data-route="{{ $slide['route'] }}"
-                style="position:absolute; inset:0;">
+            <div class="slide {{ $index === 0 ? 'active' : '' }}" data-route="{{ $slide['route'] }}">
                 <div class="doctor-slide h-100">
                     <div class="container h-100">
                         <div class="row align-items-center banner-row">

@@ -9,7 +9,8 @@
     width: 100%;
     max-width: 380px;
 
-    height: 450px; // 🔥 visible area (controls crop)
+    // height: 450px; // 🔥 visible area (controls crop)
+   aspect-ratio: 4 / 5;
     overflow: hidden;
 
     border-radius: 28px;

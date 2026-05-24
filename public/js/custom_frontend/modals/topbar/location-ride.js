@@ -9,11 +9,21 @@
                 encodedDestination +
                 "&dropoff[nickname]=" +
                 encodeURIComponent(name),
-            pathao: "https://pathao.com/ride/",
+            pathao: getPathaoAppUrl(),
             map:
                 "https://www.google.com/maps/dir/?api=1&destination=" +
                 encodedDestination,
         };
+    }
+
+    function getPathaoAppUrl() {
+        const isAndroid = /Android/i.test(navigator.userAgent);
+
+        if (isAndroid) {
+            return "intent://ride/#Intent;scheme=pathao;package=com.pathao.user;end";
+        }
+
+        return "pathao://ride";
     }
 
     function openRideUrl(action, url) {

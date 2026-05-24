@@ -105,11 +105,12 @@
 
     <script src="{{ asset('js/custom_frontend/fouc_load.js') }}"></script> {{-- FOUC Load JS --}}
     <script src="{{ asset('js/custom_frontend/navbar-dropdown.js') }}"></script> {{-- FOUC Load JS --}}
-    <script src="{{ asset('js/custom_frontend/phone.js') }}"></script> {{-- Phone Modal JS --}}
-    <script src="{{ asset('js/custom_frontend/email.js') }}"></script> {{-- Email Modal JS --}}
-    <script src="{{ asset('js/custom_frontend/location.js') }}"></script> {{-- Location Modal JS --}}
-    <script src="{{ asset('js/custom_frontend/land_phone.js') }}"></script> {{-- Land Phone Modal JS --}}
-    <script src="{{ asset('js/custom_frontend/language.js') }}"></script> {{-- Language Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/modals/topbar/phone.js') }}"></script> {{-- Phone Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/modals/topbar/navbar-collapse.js') }}"></script> {{-- Phone Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/modals/topbar/email.js') }}"></script> {{-- Email Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/modals/topbar/land_phone.js') }}"></script> {{-- Land Phone Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/modals/topbar/location.js') }}"></script> {{-- Location Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/modals/topbar/language.js') }}"></script> {{-- Language Modal JS --}}
     <script src="{{ asset('js/custom_frontend/magnified_image_modal.js') }}"></script> {{-- Magnified Image Modal JS --}}
     <script src="{{ asset('js/custom_frontend/scroll_progress.js') }}"></script> {{-- Scroll Progress JS --}}
     <script src="{{ asset('js/custom_frontend/custom_back_top_button.js') }}"></script> {{-- Back to Top JS --}}
