@@ -117,6 +117,7 @@
     <script src="{{ asset('js/custom_frontend/sweet_alert.js') }}"></script> {{-- Sweet Alert Notification JS --}}
     <script src="{{ asset('js/custom_frontend/contact_success.js') }}"></script> {{-- Contact Success Notification JS --}}
     <script src="{{ asset('js/custom_frontend/appointment-modal.js') }}"></script> {{-- Appointment Modal JS --}}
+    <script src="{{ asset('js/custom_frontend/navbar-scroll.js') }}"></script> {{-- Appointment Modal JS --}}
 
     @if (!Request::is('login'))
         <!-- Google Translate Library -->

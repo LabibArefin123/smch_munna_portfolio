@@ -1,14 +1,28 @@
 .portfolio-btn {
-    background: #111;
-    color: #fff;
-    padding: 8px 20px;
-    border-radius: 30px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+
+    color: #fff !important;
+
+    border: none;
+
+    border-radius: 999px;
+
+    padding: 11px 24px;
+
     font-size: 14px;
-    font-weight: 500;
-    transition: 0.3s ease;
+    font-weight: 600;
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.28);
+
+    transition: all 0.3s ease;
 
     &:hover {
-        background: #333;
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 16px 35px rgba(37, 99, 235, 0.35);
+
         color: #fff;
     }
 }

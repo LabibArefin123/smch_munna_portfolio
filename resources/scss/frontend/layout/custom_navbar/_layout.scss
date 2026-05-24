@@ -1,13 +1,35 @@
 .portfolio-navbar {
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(14px);
     position: fixed;
-    top: 40px;
+    top: 56px; // below topbar
     left: 0;
     width: 100%;
-    z-index: 1055;
+
+    z-index: 1050;
+
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+
     padding: 14px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-    transition: all 0.3s ease;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        padding 0.3s ease;
+
+    .container {
+        position: relative;
+    }
+}
+
+/* Scroll Effect */
+.portfolio-navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+
+    padding: 10px 0;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
 }
