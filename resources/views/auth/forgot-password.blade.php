@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-@vite('resources/scss/backend/login_page/login.scss')
+
 @section('content')
     <div class="login-wrapper">
         <div class="login-glass">

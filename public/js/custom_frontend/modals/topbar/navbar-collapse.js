@@ -3,15 +3,83 @@ document.addEventListener("DOMContentLoaded", function () {
     const navbarToggler = document.querySelector(".navbar-toggler");
     const navbar = document.querySelector(".portfolio-navbar");
 
-    if (!navbarCollapse) return;
+    if (!navbarCollapse || !navbarToggler || !navbar) {
+        return;
+    }
+
+    /* =========================================
+       BOOTSTRAP COLLAPSE INSTANCE
+    ========================================= */
 
     const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
         toggle: false,
     });
 
-    /* =========================
-       CLOSE WHEN MENU CLICKED
-    ========================== */
+    /* =========================================
+       UPDATE TOGGLER STATE
+    ========================================= */
+
+    function setNavbarState(isOpen) {
+        navbarToggler.setAttribute("aria-expanded", isOpen ? "true" : "false");
+
+        navbarToggler.classList.toggle("collapsed", !isOpen);
+
+        navbar.classList.toggle("menu-open", isOpen);
+    }
+
+    /* =========================================
+       OPEN NAVBAR
+    ========================================= */
+
+    function openNavbar() {
+        bsCollapse.show();
+
+        setNavbarState(true);
+    }
+
+    /* =========================================
+       CLOSE NAVBAR
+    ========================================= */
+
+    function closeNavbar() {
+        bsCollapse.hide();
+
+        setNavbarState(false);
+    }
+
+    /* =========================================
+       TOGGLER CLICK
+    ========================================= */
+
+    navbarToggler.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const isOpen = navbarCollapse.classList.contains("show");
+
+        if (isOpen) {
+            closeNavbar();
+        } else {
+            openNavbar();
+        }
+    });
+
+    /* =========================================
+       BOOTSTRAP EVENTS
+    ========================================= */
+
+    navbarCollapse.addEventListener("show.bs.collapse", function () {
+        setNavbarState(true);
+    });
+
+    navbarCollapse.addEventListener("hide.bs.collapse", function () {
+        setNavbarState(false);
+    });
+
+    /* =========================================
+       CLOSE WHEN MENU LINK CLICKED
+    ========================================= */
+
     document
         .querySelectorAll(
             "#navbarCollapse .nav-link, #navbarCollapse .dropdown-item",
@@ -19,38 +87,46 @@ document.addEventListener("DOMContentLoaded", function () {
         .forEach(function (link) {
             link.addEventListener("click", function () {
                 if (window.innerWidth < 992) {
-                    bsCollapse.hide();
+                    closeNavbar();
                 }
             });
         });
 
-    /* =========================
+    /* =========================================
        CLOSE WHEN CLICK OUTSIDE
-    ========================== */
-    document.addEventListener("click", function (event) {
-        if (window.innerWidth >= 992) return;
+    ========================================= */
 
-        const isInsideNavbar = navbar.contains(event.target);
-        const isToggler = navbarToggler.contains(event.target);
-        const isNavbarOpen = navbarCollapse.classList.contains("show");
-
-        if (!isInsideNavbar && !isToggler && isNavbarOpen) {
-            bsCollapse.hide();
+    function handleOutsideClick(event) {
+        if (window.innerWidth >= 992) {
+            return;
         }
-    });
 
-    /* =========================
-       CLOSE ON TOUCH OUTSIDE
-    ========================== */
-    document.addEventListener("touchstart", function (event) {
-        if (window.innerWidth >= 992) return;
+        const isOpen = navbarCollapse.classList.contains("show");
 
-        const isInsideNavbar = navbar.contains(event.target);
-        const isToggler = navbarToggler.contains(event.target);
-        const isNavbarOpen = navbarCollapse.classList.contains("show");
+        if (!isOpen) {
+            return;
+        }
 
-        if (!isInsideNavbar && !isToggler && isNavbarOpen) {
-            bsCollapse.hide();
+        const clickedInsideNavbar = navbar.contains(event.target);
+
+        if (!clickedInsideNavbar) {
+            closeNavbar();
+        }
+    }
+
+    document.addEventListener("click", handleOutsideClick);
+
+    document.addEventListener("touchstart", handleOutsideClick);
+
+    /* =========================================
+       RESET ON WINDOW RESIZE
+    ========================================= */
+
+    window.addEventListener("resize", function () {
+        if (window.innerWidth >= 992) {
+            navbarCollapse.classList.remove("show");
+
+            setNavbarState(false);
         }
     });
 });

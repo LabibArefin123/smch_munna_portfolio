@@ -140,5 +140,4 @@
         </div>
     </div>
 </div>
-
-<script src="{{ asset('js/custom_frontend/location-ride.js') }}"></script>
+<script src="{{ asset('js/custom_frontend/modals/topbar/location-ride.js') }}"></script>

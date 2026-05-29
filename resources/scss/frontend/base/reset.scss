@@ -1,9 +1,42 @@
+html,
 body {
-    padding-top: 145px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
+body {
+    padding-top: 0;
+}
+
+/* =========================================
+   DYNAMIC PAGE SPACING
+========================================= */
+
+.main-content {
+    padding-top: 145px;
+    min-height: 100vh;
+}
+
+/* Tablet */
 @media (max-width: 991px) {
-    body {
+
+    .main-content {
         padding-top: 170px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .main-content {
+        padding-top: 185px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+
+    .main-content {
+        padding-top: 200px;
     }
 }
