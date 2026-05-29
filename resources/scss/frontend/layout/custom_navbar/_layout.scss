@@ -1,61 +1,51 @@
 .portfolio-navbar {
-
     position: fixed;
-
     top: 56px;
     left: 0;
-
     width: 100%;
 
     z-index: 1050;
 
-    background: rgba(255, 255, 255, 0.94);
+    background: rgba(255, 255, 255, 0.92);
 
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
 
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 
-    box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
 
     padding: 14px 0;
 
     transition:
-        top 0.3s ease,
-        padding 0.3s ease,
         background 0.3s ease,
         box-shadow 0.3s ease,
-        transform 0.3s ease;
+        padding 0.3s ease,
+        top 0.3s ease;
 
     .container {
         position: relative;
     }
 }
 
-/* =========================================
-   SCROLL EFFECT
-========================================= */
-
+/* Scroll Effect */
 .portfolio-navbar.scrolled {
-
     background: rgba(255, 255, 255, 0.98);
 
     padding: 10px 0;
 
-    box-shadow:
-        0 10px 35px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
 }
 
 /* =========================================
-   MOBILE
+   MOBILE FIX
 ========================================= */
 
 @media (max-width: 991px) {
 
     .portfolio-navbar {
-
         top: 72px;
+        /* dynamic space below mobile topbar */
 
         padding: 10px 0;
     }
@@ -64,6 +54,7 @@
         align-items: center;
     }
 
+    /* MOBILE MENU BOX */
     .portfolio-navbar .navbar-collapse {
 
         max-height: calc(100vh - 140px);
@@ -86,26 +77,22 @@
         border: 1px solid rgba(0, 0, 0, 0.05);
     }
 
+    /* Prevent CTA overflow */
     .portfolio-btn {
         width: 100%;
         margin-top: 14px;
     }
 }
 
-/* =========================================
-   EXTRA SMALL DEVICES
-========================================= */
-
+/* EXTRA SMALL DEVICES */
 @media (max-width: 576px) {
 
     .portfolio-navbar {
-
-        top: 88px;
-
-        padding: 9px 0;
+        top: 82px;
     }
 
     .brand-text-wrap {
+
         max-width: 78%;
     }
 
