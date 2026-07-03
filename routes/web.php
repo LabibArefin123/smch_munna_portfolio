@@ -6,7 +6,7 @@ use App\Http\Controllers\OrganizationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\PatientController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\SystemUserController;
 use App\Http\Controllers\BanUserController;
@@ -72,7 +72,7 @@ Route::post('/logout', function () {
 })->name('logout');
 
 //Route::group(['middleware' => ['auth', 'permission']], function () {
-Route::group(['middleware' => ['auth', 'check_banned_device', 'detect.attack']], function () {
+Route::group(['middleware' => ['auth', 'check_banned_device', 'detect.attack','permission']], function () {
 
     //Activity Log Menu
     Route::get('/activity-logs', [ActivityLogController::class, 'index'])->name('activity.logs.index');
@@ -88,7 +88,7 @@ Route::group(['middleware' => ['auth', 'check_banned_device', 'detect.attack']],
     Route::resource('organizations', OrganizationController::class);
 
     // Gallery Routes
-    Route::resource('galleries', GalleryController::class);
+    Route::resource('patients', PatientController::class);
 
     //Profile Section
     Route::get('/user_profile', [ProfileController::class, 'user_profile_show'])->name('user_profile_show');

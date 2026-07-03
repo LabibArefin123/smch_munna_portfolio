@@ -15,7 +15,7 @@ class Patient extends Model
         'phone',
         'age',
         'description',
-        'image',
+        'patient_image',
         'recommended',
         'recommended_doctor',
         'recommendation_information',
@@ -24,4 +24,9 @@ class Patient extends Model
     protected $casts = [
         'recommended' => 'boolean',
     ];
+
+    public function descriptionImages()
+    {
+        return $this->hasMany(PatientDescriptionImage::class);
+    }
 }

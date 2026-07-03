@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('patients', function (Blueprint $table) {
+
             $table->id();
 
             // Basic Information
@@ -20,13 +21,13 @@ return new class extends Migration
             $table->string('phone', 20);
             $table->unsignedTinyInteger('age');
 
-            // Patient Description
+            // Profile Image
+            $table->string('patient_image')->nullable();
+
+            // Description
             $table->longText('description')->nullable();
 
-            // Upload Image
-            $table->string('image')->nullable();
-
-            // Doctor Recommendation
+            // Recommendation
             $table->boolean('recommended')->default(false);
             $table->string('recommended_doctor')->nullable();
             $table->longText('recommendation_information')->nullable();

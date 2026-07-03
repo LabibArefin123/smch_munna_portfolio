@@ -415,10 +415,11 @@ return [
         ],
 
         [
-            'text'    => 'Gallery Management',
+            'text'    => 'Patient Management',
             'icon'    => 'fas fa-school',
-            'route'  => 'galleries.index',
-            'active' => ['galleries*'],
+            'route'  => 'patients.index',
+            'can'  => 'patients.index',
+            'active' => ['patients*'],
         ],
 
         [
