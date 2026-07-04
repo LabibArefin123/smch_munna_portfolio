@@ -11,9 +11,19 @@ class PatientController extends Controller
     /**
      * Create Patient
      */
-    public function index()
+    public function index(Request $request)
     {
-        $patients = Patient::latest()->get();
+        $patients = Patient::query();
+
+        if ($request->filled('recommended')) {
+            $patients->where('recommended', $request->recommended);
+        }
+
+        if ($request->filled('sex')) {
+            $patients->where('sex', $request->sex);
+        }
+        
+        $patients = $patients->latest()->get();
 
         return view('backend.patient_management.index', compact('patients'));
     }

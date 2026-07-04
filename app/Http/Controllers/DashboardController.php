@@ -20,12 +20,12 @@ class DashboardController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $totalPatient = $this->totalPatient();
-        $totalRecommendedPatient = $this->totalRecommendedPatient();
-        return view('backend.dashboard', compact(
-            'totalPatient',
-            'totalRecommendedPatient'
-        ));
+        return view('backend.dashboard', [
+            'totalPatient' => $this->totalPatient(),
+            'totalRecommendedPatient' => $this->totalRecommendedPatient(),
+            'totalMalePatient' => $this->totalMalePatient(),
+            'totalFemalePatient' => $this->totalFemalePatient(),
+        ]);
     }
 
     private function totalPatient()
@@ -38,6 +38,15 @@ class DashboardController extends Controller
         return Patient::where('recommended', 1)->count();
     }
 
+    private function totalMalePatient()
+    {
+        return Patient::where('sex', 'Male')->count();
+    }
+
+    private function totalFemalePatient()
+    {
+        return Patient::where('sex', 'Female')->count();
+    }
 
     /**
      * Show the form for creating a new resource.

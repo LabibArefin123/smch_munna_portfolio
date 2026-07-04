@@ -68,57 +68,169 @@
 
         <div class="row mt-4">
             <div class="col-md-6">
-                <div class="card shadow-sm border-left-primary h-100">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <h6 class="text-uppercase text-primary mb-2">
-                                    Total Patients
-                                </h6>
+                <a href="{{ route('patients.index') }}" class="text-decoration-none text-dark">
 
-                                <h2 class="font-weight-bold">
-                                    {{ number_format($totalPatient) }}
-                                </h2>
+                    <div class="card shadow-sm border-left-primary h-100 card-hover">
 
-                                <small class="text-muted">
-                                    Registered patient records
-                                </small>
+                        <div class="card-body">
+
+                            <div class="row align-items-center">
+
+                                <div class="col">
+
+                                    <h6 class="text-uppercase text-primary mb-2">
+                                        Total Patients
+                                    </h6>
+
+                                    <h2 class="font-weight-bold">
+                                        {{ number_format($totalPatient) }}
+                                    </h2>
+
+                                    <small class="text-muted">
+                                        Registered patient records
+                                    </small>
+
+                                </div>
+
+                                <div class="col-auto">
+
+                                    <i class="fas fa-users fa-3x text-primary"></i>
+
+                                </div>
+
                             </div>
 
-                            <div class="col-auto">
-                                <i class="fas fa-users fa-3x text-primary"></i>
-                            </div>
                         </div>
+
                     </div>
-                </div>
+
+                </a>
             </div>
 
             <div class="col-md-6">
-                <div class="card shadow-sm border-left-success h-100">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <h6 class="text-uppercase text-success mb-2">
-                                    Recommended Patients
-                                </h6>
+                <a href="{{ route('patients.index', ['recommended' => 1]) }}" class="text-decoration-none text-dark">
 
-                                <h2 class="font-weight-bold">
-                                    {{ number_format($totalRecommendedPatient) }}
-                                </h2>
+                    <div class="card shadow-sm border-left-success h-100 card-hover">
 
-                                <small class="text-muted">
-                                    Patients marked as recommended
-                                </small>
+                        <div class="card-body">
+
+                            <div class="row align-items-center">
+
+                                <div class="col">
+
+                                    <h6 class="text-uppercase text-success mb-2">
+                                        Recommended Patients
+                                    </h6>
+
+                                    <h2 class="font-weight-bold">
+                                        {{ number_format($totalRecommendedPatient) }}
+                                    </h2>
+
+                                    <small class="text-muted">
+                                        Patients marked as recommended
+                                    </small>
+
+                                </div>
+
+                                <div class="col-auto">
+
+                                    <i class="fas fa-user-check fa-3x text-success"></i>
+
+                                </div>
+
                             </div>
 
-                            <div class="col-auto">
-
-                                <i class="fas fa-user-check fa-3x text-success"></i>
-                            </div>
                         </div>
+
                     </div>
-                </div>
+
+                </a>
+            </div>
+
+            <div class="col-md-6 mt-4">
+
+                <a href="{{ route('patients.index', ['sex' => 'Male']) }}" class="text-decoration-none text-dark">
+
+                    <div class="card shadow-sm border-left-info h-100 card-hover">
+
+                        <div class="card-body">
+
+                            <div class="row align-items-center">
+
+                                <div class="col">
+
+                                    <h6 class="text-uppercase text-info mb-2">
+                                        Male Patients
+                                    </h6>
+
+                                    <h2 class="font-weight-bold">
+                                        {{ number_format($totalMalePatient) }}
+                                    </h2>
+
+                                    <small class="text-muted">
+                                        Total registered male patients
+                                    </small>
+
+                                </div>
+
+                                <div class="col-auto">
+
+                                    <i class="fas fa-male fa-3x text-info"></i>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <div class="col-md-6 mt-4">
+
+                <a href="{{ route('patients.index', ['sex' => 'Female']) }}" class="text-decoration-none text-dark">
+
+                    <div class="card shadow-sm border-left-danger h-100 card-hover">
+
+                        <div class="card-body">
+
+                            <div class="row align-items-center">
+
+                                <div class="col">
+
+                                    <h6 class="text-uppercase text-danger mb-2">
+                                        Female Patients
+                                    </h6>
+
+                                    <h2 class="font-weight-bold">
+                                        {{ number_format($totalFemalePatient) }}
+                                    </h2>
+
+                                    <small class="text-muted">
+                                        Total registered female patients
+                                    </small>
+
+                                </div>
+
+                                <div class="col-auto">
+
+                                    <i class="fas fa-female fa-3x text-danger"></i>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
             </div>
         </div>
     </div>
+    <div style="height: 50px;"></div>
 @stop
