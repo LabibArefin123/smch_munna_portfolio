@@ -1,4 +1,3 @@
-
 @extends('adminlte::page')
 
 @section('title', 'Patients')
@@ -67,10 +66,8 @@
                     </thead>
 
                     <tbody>
-
                         @foreach ($patients as $patient)
                             <tr>
-
                                 <td>{{ $loop->iteration }}</td>
 
                                 <td>
@@ -79,7 +76,7 @@
                                         <img src="{{ asset('uploads/images/patients/' . $patient->patient_image) }}"
                                             class="img-thumbnail" width="60" height="60" style="object-fit:cover;">
                                     @else
-                                        <img src="https://placehold.co/60x60?text=N/A" class="img-thumbnail">
+                                        <img src="{{ asset('uploads/images/default.jpg') }}" class="img-thumbnail">
                                     @endif
 
                                 </td>
@@ -115,11 +112,11 @@
                                 </td>
 
                                 <td>
-
-                                    <a href="{{ route('patients.edit', $patient->id) }}" class="btn btn-warning btn-sm">
-
+                                    <a href="{{ route('patients.edit', $patient->id) }}" class="btn btn-primary btn-sm">
                                         <i class="fas fa-edit"></i>
-
+                                    </a>
+                                    <a href="{{ route('patients.show', $patient->id) }}" class="btn btn-warning btn-sm">
+                                        <i class="fas fa-eye"></i>
                                     </a>
 
                                     <form action="{{ route('patients.destroy', $patient->id) }}" method="POST"

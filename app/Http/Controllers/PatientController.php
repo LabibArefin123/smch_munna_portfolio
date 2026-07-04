@@ -96,10 +96,16 @@ class PatientController extends Controller
             ->with('success', 'Patient created successfully.');
     }
 
-    public function edit(Patient $patient)
+    public function show(Patient $patient)
     {
         $patient->load('descriptionImages');
 
+        return view('backend.patient_management.show', compact('patient'));
+    }
+
+    public function edit(Patient $patient)
+    {
+        $patient->load('descriptionImages');
         return view('backend.patient_management.edit', compact('patient'));
     }
 
