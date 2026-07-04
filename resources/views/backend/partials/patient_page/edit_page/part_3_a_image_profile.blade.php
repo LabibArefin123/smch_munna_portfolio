@@ -22,6 +22,8 @@
     <br>
 
     <img id="patientPreview"
-        src="{{ !empty($patient->patient_image) ? asset($patient->patient_image) : 'https://placehold.co/220x220?text=No+Image' }}"
+        src="{{ !empty($patient->patient_image)
+            ? asset('uploads/images/patients/' . $patient->patient_image)
+            : asset('uploads/images/default.jpg') }}"
         class="img-thumbnail shadow" style="width:220px;height:220px;object-fit:cover;">
 </div>

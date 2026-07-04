@@ -3,10 +3,15 @@ $(document).ready(function () {
         const files = event.target.files;
         const preview = $("#descriptionPreview");
 
-        // Clear previous previews
         preview.empty();
 
-        if (!files || files.length === 0) {
+        if (!files.length) {
+            preview.html(`
+                <div class="col-12 text-center text-muted">
+                    No new images selected.
+                </div>
+            `);
+
             return;
         }
 
@@ -18,8 +23,10 @@ $(document).ready(function () {
             const reader = new FileReader();
 
             reader.onload = function (e) {
-                const card = `
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3 description-preview-card" data-index="${index}">
+                preview.append(`
+
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3 description-preview-card">
+
                         <div class="card shadow-sm h-100">
 
                             <img
@@ -29,8 +36,10 @@ $(document).ready(function () {
 
                             <div class="card-body text-center p-2">
 
-                                <small class="text-truncate d-block mb-2">
+                                <small class="d-block text-truncate mb-2">
+
                                     ${file.name}
+
                                 </small>
 
                                 <button
@@ -44,10 +53,10 @@ $(document).ready(function () {
                             </div>
 
                         </div>
-                    </div>
-                `;
 
-                preview.append(card);
+                    </div>
+
+                `);
             };
 
             reader.readAsDataURL(file);

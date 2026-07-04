@@ -67,5 +67,6 @@
 @section('js')
     <script src="{{ asset('js/custom_backend/patient_page/edit/recommendation-toggle.js') }}"></script>
     <script src="{{ asset('js/custom_backend/patient_page/edit/patient-image-preview.js') }}"></script>
-    <script src="{{ asset('js/custom_backend/patient_page/edit/description-image-preview.js') }}"></script>
+    <script src="{{ asset('js/custom_backend/patient_page/edit/description-old-image-preview.js') }}"></script>
+    <script src="{{ asset('js/custom_backend/patient_page/edit/description-new-image-preview.js') }}"></script>
 @endsection
