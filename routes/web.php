@@ -88,6 +88,7 @@ Route::group(['middleware' => ['auth', 'check_banned_device', 'detect.attack','p
     Route::resource('organizations', OrganizationController::class);
 
     // Gallery Routes
+    Route::get('patients/filter', [PatientController::class, 'filter'])->name('patients.filter');
     Route::resource('patients', PatientController::class);
 
     //Profile Section

@@ -18,6 +18,35 @@ class PatientController extends Controller
         return view('backend.patient_management.index', compact('patients'));
     }
 
+    public function filter(Request $request)
+    {
+        $patients = Patient::query();
+        if ($request->filled('search')) {
+
+            $patients->where(function ($q) use ($request) {
+
+                $q->where('name', 'like', '%' . $request->search . '%')
+                    ->orWhere('phone', 'like', '%' . $request->search . '%');
+            });
+        }
+
+        if ($request->filled('sex')) {
+            $patients->where('sex', $request->sex);
+        }
+
+        if ($request->recommended !== null) {
+            $patients->where('recommended', $request->recommended);
+        }
+
+        if ($request->filled('age')) {
+            $patients->where('age', $request->age);
+        }
+
+        return response()->json(
+            $patients->latest()->get()
+        );
+    }
+
     public function create()
     {
         return view('backend.patient_management.create');
@@ -30,13 +59,14 @@ class PatientController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255|unique:patients,name',
             'sex' => 'required|in:Male,Female',
-            'phone' => 'required|string|max:20',
+            'phone' => 'required|string|max:20|unique:patients,phone',
             'age' => 'required|integer|min:0|max:120',
             'patient_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:5120',
             'description' => 'nullable|string',
-            'description_images.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:5120',
+            'description_images' => 'nullable|array',
+            'description_images.*' => 'image|mimes:jpg,jpeg,png,webp|max:5120',
             'recommended' => 'required|boolean',
             'recommended_doctor' => 'nullable|string|max:255',
             'recommendation_information' => 'nullable|string',
@@ -112,15 +142,22 @@ class PatientController extends Controller
     public function update(Request $request, Patient $patient)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255|unique:patients,name,' . $patient->id,
             'sex' => 'required|in:Male,Female',
-            'phone' => 'required|string|max:20',
+            'phone' => 'required|string|max:20|unique:patients,phone,' . $patient->id,
             'age' => 'required|integer|min:0|max:120',
+
             'patient_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:5120',
+
             'description' => 'nullable|string',
-            'description_images.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:5120',
+
+            'description_images' => 'nullable|array',
+            'description_images.*' => 'image|mimes:jpg,jpeg,png,webp|max:5120',
+
             'recommended' => 'required|boolean',
+
             'recommended_doctor' => 'nullable|string|max:255',
+
             'recommendation_information' => 'nullable|string',
         ]);
 

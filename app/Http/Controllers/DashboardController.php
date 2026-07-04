@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use App\Models\Patient;
 use App\Models\User;
 
 class DashboardController extends Controller
@@ -19,9 +20,22 @@ class DashboardController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $totalPatient = $this->totalPatient();
+        $totalRecommendedPatient = $this->totalRecommendedPatient();
+        return view('backend.dashboard', compact(
+            'totalPatient',
+            'totalRecommendedPatient'
+        ));
+    }
 
-       
-        return view('backend.dashboard');
+    private function totalPatient()
+    {
+        return Patient::count();
+    }
+
+    private function totalRecommendedPatient()
+    {
+        return Patient::where('recommended', 1)->count();
     }
 
 

@@ -8,7 +8,7 @@
         {{-- Header --}}
         <div class="mb-4">
             <h1 class="h3 font-weight-bold text-primary">
-               Dr. Mohammad Faisal Ibn Kabir – Portfolio Management
+                Dr. Mohammad Faisal Ibn Kabir – Portfolio Management
             </h1>
             <p class="text-muted">
                 Manage profile information, achievements, publications, gallery, and website content.
@@ -64,8 +64,61 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card shadow-sm border-left-primary h-100">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h6 class="text-uppercase text-primary mb-2">
+                                    Total Patients
+                                </h6>
+
+                                <h2 class="font-weight-bold">
+                                    {{ number_format($totalPatient) }}
+                                </h2>
+
+                                <small class="text-muted">
+                                    Registered patient records
+                                </small>
+                            </div>
+
+                            <div class="col-auto">
+                                <i class="fas fa-users fa-3x text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card shadow-sm border-left-success h-100">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h6 class="text-uppercase text-success mb-2">
+                                    Recommended Patients
+                                </h6>
+
+                                <h2 class="font-weight-bold">
+                                    {{ number_format($totalRecommendedPatient) }}
+                                </h2>
+
+                                <small class="text-muted">
+                                    Patients marked as recommended
+                                </small>
+                            </div>
+
+                            <div class="col-auto">
+
+                                <i class="fas fa-user-check fa-3x text-success"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 @stop
