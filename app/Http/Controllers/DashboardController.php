@@ -107,34 +107,14 @@ class DashboardController extends Controller
 
         $results = [];
 
-        /* ==========================
-       Try to parse date
-    ========================== */
-        $parsedDate = null;
-        try {
-            $parsedDate = Carbon::parse($term)->format('Y-m-d');
-        } catch (\Exception $e) {
-            // ignore
-        }
 
         /* ==========================
        Patient Query
     ========================== */
         $patients = Patient::query()
             ->where(function ($q) use ($term) {
-                $q->where('patient_name', 'like', "%{$term}%")
-                    ->orWhere('patient_code', 'like', "%{$term}%")
-                    ->orWhere('phone_1', 'like', "%{$term}%")
-                    ->orWhere('phone_2', 'like', "%{$term}%")
-                    ->orWhere('phone_f_1', 'like', "%{$term}%")
-                    ->orWhere('phone_m_1', 'like', "%{$term}%")
-                    ->orWhere('patient_f_name', 'like', "%{$term}%")
-                    ->orWhere('patient_m_name', 'like', "%{$term}%")
-                    ->orWhere('district', 'like', "%{$term}%")
-                    ->orWhere('city', 'like', "%{$term}%");
-            })
-            ->when($parsedDate, function ($q) use ($parsedDate) {
-                $q->orWhereDate('date_of_patient_added', $parsedDate);
+                $q->where('name', 'like', "%{$term}%")
+                    ->orWhere('phone', 'like', "%{$term}%");
             })
             ->limit(15)
             ->get();
@@ -144,13 +124,10 @@ class DashboardController extends Controller
     ========================== */
         foreach ($patients as $patient) {
 
-            $name = $this->highlightMatch($patient->patient_name, $term);
-            $code = $this->highlightMatch($patient->patient_code, $term);
-            $fathers_name = $this->highlightMatch($patient->patient_f_name, $term);
-            $mothers_name = $this->highlightMatch($patient->patient_m_name, $term);
+            $name = $this->highlightMatch($patient->name, $term);
 
             $results[] = [
-                'label' => "{$name} ({$code}) [Father's Name - {$fathers_name}] [Mother's Name - {$mothers_name}]",
+                'label' => "{$name} ",
                 'url'   => route('patients.show', $patient->id),
             ];
         }

@@ -8,16 +8,18 @@
 
     <div class="card-body">
         <div class="form-group">
+
             <label>Description</label>
 
-            <textarea name="description" rows="6" class="form-control @error('description') is-invalid @enderror"
-                placeholder="Write patient details, diagnosis, symptoms, history, etc...">{{ old('description', $patient->description) }}</textarea>
+            <textarea name="description" id="description" rows="10"
+                class="form-control @error('description') is-invalid @enderror">{{ old('description', $patient->description ?? '') }}</textarea>
 
             @error('description')
                 <span class="invalid-feedback">
                     {{ $message }}
                 </span>
             @enderror
+
         </div>
     </div>
 </div>
