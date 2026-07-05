@@ -22,7 +22,7 @@ class PatientController extends Controller
         if ($request->filled('sex')) {
             $patients->where('sex', $request->sex);
         }
-        
+
         $patients = $patients->latest()->get();
 
         return view('backend.patient_management.index', compact('patients'));
@@ -73,34 +73,56 @@ class PatientController extends Controller
             'sex' => 'required|in:Male,Female',
             'phone' => 'required|string|max:20|unique:patients,phone',
             'age' => 'required|integer|min:0|max:120',
+
             'patient_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:5120',
+
             'description' => 'nullable|string',
+
             'description_images' => 'nullable|array',
-            'description_images.*' => 'image|mimes:jpg,jpeg,png,webp|max:5120',
+            'description_images.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:5120',
+
             'recommended' => 'required|boolean',
             'recommended_doctor' => 'nullable|string|max:255',
             'recommendation_information' => 'nullable|string',
         ]);
 
-        $patientImage = null;
-        $destination = public_path('uploads/images/patients');
+        /*
+    |--------------------------------------------------------------------------
+    | Create patient folder name from patient name
+    |--------------------------------------------------------------------------
+    */
+        $patientFolder = \Illuminate\Support\Str::slug($request->name);
+
+        $destination = public_path('uploads/images/patients/' . $patientFolder);
 
         if (!file_exists($destination)) {
             mkdir($destination, 0755, true);
         }
 
-        // Patient Image
-        if ($request->hasFile('patient_image')) {
+        /*
+    |--------------------------------------------------------------------------
+    | Upload patient profile image
+    |--------------------------------------------------------------------------
+    */
+        $patientImage = null;
 
+        if ($request->hasFile('patient_image')) {
             $image = $request->file('patient_image');
 
-            $patientImage = 'patient_' . date('d_m_Y_H_i_s') . '.' . $image->getClientOriginalExtension();
+            $patientImage = 'patient_' . uniqid() . '_' . now()->format('YmdHis') . '.' . $image->getClientOriginalExtension();
 
             $image->move($destination, $patientImage);
         }
 
+        /*
+    |--------------------------------------------------------------------------
+    | Create patient
+    |--------------------------------------------------------------------------
+    | Save folder name too if you have a folder column.
+    | If not, just remove 'image_folder' from here.
+    |--------------------------------------------------------------------------
+    */
         $patient = Patient::create([
-
             'name' => $request->name,
             'sex' => $request->sex,
             'phone' => $request->phone,
@@ -110,29 +132,33 @@ class PatientController extends Controller
             'recommended' => $request->recommended,
             'recommended_doctor' => $request->recommended_doctor,
             'recommendation_information' => $request->recommendation_information,
-
+            // 'image_folder' => $patientFolder, // optional if you add this column
         ]);
 
+        /*
+    |--------------------------------------------------------------------------
+    | Upload description images
+    |--------------------------------------------------------------------------
+    */
         if ($request->hasFile('description_images')) {
-            $destination = public_path('uploads/images/patients');
-            foreach ($request->file('description_images') as $key => $image) {
-                $imageName = 'description_' . date('d_m_Y_H_i_s')
-                    . '_' . $key . '_'
-                    . uniqid()
-                    . '.'
-                    . $image->getClientOriginalExtension();
+            $images = [];
+
+            foreach ($request->file('description_images') as $image) {
+                $imageName = 'description_' . uniqid() . '_' . now()->format('YmdHis') . '.' . $image->getClientOriginalExtension();
 
                 $image->move($destination, $imageName);
 
-                PatientDescriptionImage::create([
-                    'patient_id' => $patient->id,
-                    'image' => $imageName
-
-                ]);
+                $images[] = $imageName;
             }
+
+            PatientDescriptionImage::create([
+                'patient_id' => $patient->id,
+                'images' => $images,
+            ]);
         }
 
-        return redirect()->route('patients.index')
+        return redirect()
+            ->route('patients.index')
             ->with('success', 'Patient created successfully.');
     }
 
@@ -146,6 +172,13 @@ class PatientController extends Controller
     public function edit(Patient $patient)
     {
         $patient->load('descriptionImages');
+
+        if (!$patient->descriptionImages) {
+            $patient->setRelation('descriptionImages', new PatientDescriptionImage([
+                'images' => [],
+            ]));
+        }
+
         return view('backend.patient_management.edit', compact('patient'));
     }
 
@@ -162,48 +195,69 @@ class PatientController extends Controller
             'description' => 'nullable|string',
 
             'description_images' => 'nullable|array',
-            'description_images.*' => 'image|mimes:jpg,jpeg,png,webp|max:5120',
+            'description_images.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:5120',
+
+            'delete_description_images' => 'nullable|array',
+            'delete_description_images.*' => 'nullable',
 
             'recommended' => 'required|boolean',
-
             'recommended_doctor' => 'nullable|string|max:255',
-
             'recommendation_information' => 'nullable|string',
         ]);
 
-        $destination = public_path('uploads/images/patients');
+        /*
+    |--------------------------------------------------------------------------
+    | Resolve patient image folder
+    |--------------------------------------------------------------------------
+    | If old patient has no image_folder yet, create one and save it.
+    |--------------------------------------------------------------------------
+    */
+        if (empty($patient->image_folder)) {
+            $patient->image_folder = \Illuminate\Support\Str::slug($patient->name) . '_' . $patient->id;
+        }
+
+        $destination = public_path('uploads/images/patients/' . $patient->image_folder);
 
         if (!file_exists($destination)) {
             mkdir($destination, 0755, true);
         }
 
-        // Patient Image
+        /*
+    |--------------------------------------------------------------------------
+    | Update Main Patient Image
+    |--------------------------------------------------------------------------
+    */
         if ($request->hasFile('patient_image')) {
-
-            if ($patient->patient_image && file_exists($destination . '/' . $patient->patient_image)) {
+            // delete old patient image from patient folder
+            if (
+                $patient->patient_image &&
+                file_exists($destination . '/' . $patient->patient_image)
+            ) {
                 unlink($destination . '/' . $patient->patient_image);
+            }
+            // fallback: old image may still be in root patients folder
+            elseif (
+                $patient->patient_image &&
+                file_exists(public_path('uploads/images/patients/' . $patient->patient_image))
+            ) {
+                unlink(public_path('uploads/images/patients/' . $patient->patient_image));
             }
 
             $image = $request->file('patient_image');
 
-            $patientImage = 'patient_' . date('d_m_Y_H_i_s') . '.' . $image->getClientOriginalExtension();
+            $patientImageName =
+                'patient_' . uniqid() . '_' . now()->format('YmdHis') . '.' . $image->getClientOriginalExtension();
 
-            $image->move($destination, $patientImage);
+            $image->move($destination, $patientImageName);
 
-            $patient->patient_image = $patientImage;
+            $patient->patient_image = $patientImageName;
         }
 
-        foreach ($patient->descriptionImages as $photo) {
-
-            $path = public_path('uploads/images/patients/' . $photo->image);
-
-            if (file_exists($path)) {
-                unlink($path);
-            }
-
-            $photo->delete();
-        }
-
+        /*
+    |--------------------------------------------------------------------------
+    | Update Patient Basic Info
+    |--------------------------------------------------------------------------
+    */
         $patient->name = $request->name;
         $patient->sex = $request->sex;
         $patient->phone = $request->phone;
@@ -213,33 +267,88 @@ class PatientController extends Controller
         $patient->recommended_doctor = $request->recommended_doctor;
         $patient->recommendation_information = $request->recommendation_information;
 
+        // keep folder stable once created
         $patient->save();
 
-        if ($request->hasFile('description_images')) {
+        /*
+    |--------------------------------------------------------------------------
+    | Handle Description Images (Delete old + Add new)
+    |--------------------------------------------------------------------------
+    */
+        $hasNewImages = $request->hasFile('description_images');
 
-            foreach ($request->file('description_images') as $key => $image) {
+        $hasDeleteRequest = collect($request->delete_description_images ?? [])
+            ->filter(fn($value) => $value !== null && $value !== '')
+            ->isNotEmpty();
 
-                $imageName = 'description_'
-                    . date('d_m_Y_H_i_s')
-                    . '_' . $key
-                    . '_'
-                    . uniqid()
-                    . '.'
-                    . $image->getClientOriginalExtension();
+        if ($hasNewImages || $hasDeleteRequest) {
+            $patientDescription = PatientDescriptionImage::firstOrCreate(
+                ['patient_id' => $patient->id],
+                ['images' => []]
+            );
 
-                $image->move($destination, $imageName);
+            $images = $patientDescription->images ?? [];
 
-                PatientDescriptionImage::create([
-                    'patient_id' => $patient->id,
-                    'image' => $imageName,
-                ]);
+            /*
+        |--------------------------------------------------------------------------
+        | Delete selected old images
+        |--------------------------------------------------------------------------
+        */
+            if ($hasDeleteRequest) {
+                $deleteIndexes = collect($request->delete_description_images)
+                    ->filter(fn($value) => $value !== null && $value !== '')
+                    ->map(fn($value) => (int) $value)
+                    ->unique()
+                    ->sortDesc()
+                    ->values()
+                    ->all();
+
+                foreach ($deleteIndexes as $index) {
+                    if (isset($images[$index])) {
+                        $oldImageName = $images[$index];
+
+                        $oldImagePath = $destination . '/' . $oldImageName;
+                        $fallbackOldImagePath = public_path('uploads/images/patients/' . $oldImageName);
+
+                        if (file_exists($oldImagePath)) {
+                            unlink($oldImagePath);
+                        } elseif (file_exists($fallbackOldImagePath)) {
+                            unlink($fallbackOldImagePath);
+                        }
+
+                        unset($images[$index]);
+                    }
+                }
+
+                $images = array_values($images);
             }
+
+            /*
+        |--------------------------------------------------------------------------
+        | Upload new description images
+        |--------------------------------------------------------------------------
+        */
+            if ($hasNewImages) {
+                foreach ($request->file('description_images') as $image) {
+                    $imageName =
+                        'description_' . uniqid() . '_' . now()->format('YmdHis') . '.' . $image->getClientOriginalExtension();
+
+                    $image->move($destination, $imageName);
+
+                    $images[] = $imageName;
+                }
+            }
+
+            $patientDescription->update([
+                'images' => $images,
+            ]);
         }
 
-        return redirect()->route('patients.index')
+        return redirect()
+            ->route('patients.index')
             ->with('success', 'Patient updated successfully.');
     }
-
+    
     public function destroy(Patient $patient)
     {
         $destination = public_path('uploads/images/patients');

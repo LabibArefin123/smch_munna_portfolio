@@ -28,22 +28,33 @@
 
             <div class="col-md-9">
                 <label>Description Images</label>
+
                 <div class="row mt-2">
-                    @forelse($patient->descriptionImages as $image)
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                            <div class="card shadow-sm">
-                                <img src="{{ asset('uploads/images/patients/' . $image->image) }}" class="card-img-top"
-                                    style="height:170px;object-fit:cover;">
+
+                    @if ($patient->descriptionImages && !empty($patient->descriptionImages->images))
+
+                        @foreach ($patient->descriptionImages->images as $image)
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+
+                                <div class="card shadow-sm">
+
+                                    <img src="{{ asset('uploads/images/patients/' . $image) }}"
+                                        class="card-img-top img-thumbnail" style="height:170px;object-fit:cover;">
+
+                                </div>
+
                             </div>
+                        @endforeach
+                    @else
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+
+                            <img src="{{ asset('uploads/default.jpg') }}" class="img-thumbnail shadow"
+                                style="height:170px;width:100%;object-fit:cover;">
+
                         </div>
 
-                    @empty
-                        <div class="col-12">
-                            <div class="alert alert-warning">
-                                <img src="{{ asset('uploads/images/default.jpg') }}" class="img-thumbnail">
-                            </div>
-                        </div>
-                    @endforelse
+                    @endif
+
                 </div>
             </div>
         </div>

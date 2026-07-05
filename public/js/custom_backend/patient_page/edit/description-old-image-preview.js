@@ -1,11 +1,13 @@
-$(document).ready(function () {
+$(function () {
     $(document).on("click", ".remove-old-description", function () {
-        let card = $(this).closest(".old-description-card");
+        const $button = $(this);
+        const $card = $button.closest(".old-description-card");
+        const index = $button.data("index");
 
-        let hiddenInput = card.find(".delete-old-image");
+        $card.find(".delete-old-image").val(index);
 
-        hiddenInput.val($(this).data("id"));
-
-        card.fadeOut(300);
+        $card.fadeOut(250, function () {
+            $(this).addClass("d-none");
+        });
     });
 });

@@ -115,13 +115,25 @@
                                 <td>{{ $loop->iteration }}</td>
 
                                 <td>
-                                    @if ($patient->patient_image)
-                                        <img src="{{ asset('uploads/images/patients/' . $patient->patient_image) }}"
-                                            class="img-thumbnail" width="60" height="60" style="object-fit:cover;">
-                                    @else
-                                        <img src="{{ asset('uploads/images/default.jpg') }}" class="img-thumbnail"
-                                            width="60" height="60" style="object-fit:cover;">
-                                    @endif
+                                    @php
+                                        $patientImage = null;
+
+                                        if ($patient->patient_image && $patient->image_folder) {
+                                            $patientImage = asset(
+                                                'uploads/images/patients/' .
+                                                    $patient->image_folder .
+                                                    '/' .
+                                                    $patient->patient_image,
+                                            );
+                                        } elseif ($patient->patient_image) {
+                                            $patientImage = asset('uploads/images/patients/' . $patient->patient_image);
+                                        } else {
+                                            $patientImage = asset('uploads/images/default.jpg');
+                                        }
+                                    @endphp
+
+                                    <img src="{{ $patientImage }}" class="img-thumbnail" width="60" height="60"
+                                        style="object-fit:cover;" alt="{{ $patient->name }}">
                                 </td>
                                 <td> <strong>{{ $patient->name }}</strong> </td>
                                 <td>{{ $patient->sex }}</td>

@@ -1,69 +1,114 @@
 $(document).ready(function () {
-    $("#description_images").on("change", function (event) {
-        const files = event.target.files;
-        const preview = $("#descriptionPreview");
+    const $input = $("#description_images");
+    const $preview = $("#descriptionPreview");
 
-        preview.empty();
+    let selectedFiles = [];
 
-        if (!files.length) {
-            preview.html(`
-                <div class="col-12 text-center text-muted">
-                    No new images selected.
-                </div>
-            `);
+    function getOrientation(width, height) {
+        if (width > height) return "Landscape";
+        if (height > width) return "Portrait";
+        return "Square";
+    }
 
+    function syncInputFiles() {
+        const dataTransfer = new DataTransfer();
+
+        selectedFiles.forEach((file) => {
+            dataTransfer.items.add(file);
+        });
+
+        $input[0].files = dataTransfer.files;
+    }
+
+    function renderPreview() {
+        $preview.html("");
+
+        if (!selectedFiles.length) {
             return;
         }
 
-        Array.from(files).forEach(function (file, index) {
-            if (!file.type.startsWith("image/")) {
-                return;
-            }
-
+        selectedFiles.forEach((file, index) => {
             const reader = new FileReader();
 
             reader.onload = function (e) {
-                preview.append(`
+                const image = new Image();
 
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3 description-preview-card">
+                image.onload = function () {
+                    const width = image.width;
+                    const height = image.height;
+                    const orientation = getOrientation(width, height);
+                    const extension = file.name.split(".").pop().toUpperCase();
+                    const size = (file.size / 1024).toFixed(2);
 
-                        <div class="card shadow-sm h-100">
+                    const html = `
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 description-preview-card" data-index="${index}">
+                            <div class="card shadow border-0 h-100">
+                                <img
+                                    src="${e.target.result}"
+                                    class="card-img-top"
+                                    style="height:180px;object-fit:cover;"
+                                    alt="${file.name}"
+                                >
 
-                            <img
-                                src="${e.target.result}"
-                                class="card-img-top"
-                                style="height:160px;object-fit:cover;">
+                                <div class="card-body p-2">
+                                    <h6 class="text-truncate mb-2">${file.name}</h6>
 
-                            <div class="card-body text-center p-2">
+                                    <table class="table table-sm table-borderless mb-2">
+                                        <tr>
+                                            <th style="width:90px;">Type</th>
+                                            <td>${file.type || "Image"}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Extension</th>
+                                            <td>${extension}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Size</th>
+                                            <td>${size} KB</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Dimension</th>
+                                            <td>${width} × ${height}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Shape</th>
+                                            <td>${orientation}</td>
+                                        </tr>
+                                    </table>
 
-                                <small class="d-block text-truncate mb-2">
-
-                                    ${file.name}
-
-                                </small>
-
-                                <button
-                                    type="button"
-                                    class="btn btn-danger btn-sm remove-description-preview">
-
-                                    <i class="fas fa-times"></i>
-
-                                </button>
-
+                                    <button
+                                        type="button"
+                                        class="btn btn-danger btn-block btn-sm remove-description-preview"
+                                        data-index="${index}"
+                                    >
+                                        <i class="fas fa-trash"></i>
+                                        Remove
+                                    </button>
+                                </div>
                             </div>
-
                         </div>
+                    `;
 
-                    </div>
+                    $preview.append(html);
+                };
 
-                `);
+                image.src = e.target.result;
             };
 
             reader.readAsDataURL(file);
         });
+    }
+
+    $input.on("change", function (event) {
+        selectedFiles = Array.from(event.target.files);
+        renderPreview();
     });
 
     $(document).on("click", ".remove-description-preview", function () {
-        $(this).closest(".description-preview-card").remove();
+        const index = $(this).data("index");
+
+        selectedFiles.splice(index, 1);
+        syncInputFiles();
+        renderPreview();
     });
 });

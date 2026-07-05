@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('patient_description_images', function (Blueprint $table) {
             $table->id();
             $table->foreignId('patient_id')->nullable()->index();
-            $table->string('image');
+            $table->json('images')->nullable();
             $table->timestamps();
         });
     }

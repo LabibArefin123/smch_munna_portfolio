@@ -36,10 +36,10 @@
                             @include('backend.partials.patient_page.edit_page.part_2')
 
                             {{-- Patient Images --}}
-                            @include('backend.partials.patient_page.create_page.part_3')
+                            @include('backend.partials.patient_page.edit_page.part_3')
 
                             {{-- Doctor Recommendation --}}
-                            @include('backend.partials.patient_page.create_page.part_4')
+                            @include('backend.partials.patient_page.edit_page.part_4')
 
                             <div class="card mt-4">
                                 <div class="card-body">

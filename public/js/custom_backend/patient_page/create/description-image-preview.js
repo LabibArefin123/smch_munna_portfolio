@@ -1,11 +1,12 @@
 $(document).ready(function () {
     $("#description_images").on("change", function (event) {
         let files = event.target.files;
-        let $preview = $("#descriptionPreview");
 
-        $preview.html("");
+        let preview = $("#descriptionPreview");
 
-        if (!files || files.length === 0) {
+        preview.html("");
+
+        if (!files.length) {
             return;
         }
 
@@ -13,28 +14,89 @@ $(document).ready(function () {
             let reader = new FileReader();
 
             reader.onload = function (e) {
-                let html = `
-                    <div class="card mr-3 mb-3 shadow-sm description-preview-card"
-                         data-index="${index}"
-                         style="width:180px;">
-                        <img src="${e.target.result}"
-                             class="card-img-top"
-                             style="height:160px; object-fit:cover;">
+                let image = new Image();
 
-                        <div class="card-body p-2 text-center">
-                            <small class="text-truncate d-block">
-                                ${file.name}
-                            </small>
+                image.onload = function () {
+                    let width = image.width;
+                    let height = image.height;
 
-                            <button type="button"
-                                    class="btn btn-danger btn-sm mt-2 remove-description-preview">
-                                <i class="fas fa-times"></i>
-                            </button>
+                    let orientation = "Square";
+
+                    if (width > height) {
+                        orientation = "Landscape";
+                    } else if (height > width) {
+                        orientation = "Portrait";
+                    }
+
+                    let extension = file.name.split(".").pop().toUpperCase();
+
+                    let size = (file.size / 1024).toFixed(2);
+
+                    let html = `
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 description-preview-card"
+                         data-index="${index}">
+
+                        <div class="card shadow border-0 h-100">
+
+                            <img src="${e.target.result}"
+                                 class="card-img-top"
+                                 style="height:180px;object-fit:cover;">
+
+                            <div class="card-body p-2">
+
+                                <h6 class="text-truncate mb-2">
+                                    ${file.name}
+                                </h6>
+
+                                <table class="table table-sm table-borderless mb-2">
+
+                                    <tr>
+                                        <th>Type</th>
+                                        <td>${file.type}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Extension</th>
+                                        <td>${extension}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Size</th>
+                                        <td>${size} KB</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Dimension</th>
+                                        <td>${width} × ${height}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Shape</th>
+                                        <td>${orientation}</td>
+                                    </tr>
+
+                                </table>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-danger btn-block btn-sm remove-description-preview">
+
+                                    <i class="fas fa-trash"></i>
+
+                                    Remove
+
+                                </button>
+
+                            </div>
+
                         </div>
-                    </div>
-                `;
 
-                $preview.append(html);
+                    </div>`;
+
+                    preview.append(html);
+                };
+
+                image.src = e.target.result;
             };
 
             reader.readAsDataURL(file);

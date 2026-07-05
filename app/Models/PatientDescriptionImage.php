@@ -8,9 +8,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class PatientDescriptionImage extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'patient_id',
-        'image',
+        'images',
+    ];
+
+    protected $casts = [
+        'images' => 'array',
     ];
 
     public function patient()
