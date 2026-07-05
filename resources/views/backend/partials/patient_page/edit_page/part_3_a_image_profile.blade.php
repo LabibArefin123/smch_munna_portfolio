@@ -21,9 +21,22 @@
     <label>Preview</label>
     <br>
 
-    <img id="patientPreview"
-        src="{{ !empty($patient->patient_image)
-            ? asset('uploads/images/patients/' . $patient->patient_image)
-            : asset('uploads/images/default.jpg') }}"
-        class="img-thumbnail shadow" style="width:220px;height:220px;object-fit:cover;">
+    @php
+        $patientFolder = \Illuminate\Support\Str::slug($patient->name);
+
+        $patientImagePath = public_path('uploads/images/patients/' . $patientFolder . '/' . $patient->patient_image);
+
+        $legacyPatientImagePath = public_path('uploads/images/patients/' . $patient->patient_image);
+
+        if (!empty($patient->patient_image) && file_exists($patientImagePath)) {
+            $patientImageUrl = asset('uploads/images/patients/' . $patientFolder . '/' . $patient->patient_image);
+        } elseif (!empty($patient->patient_image) && file_exists($legacyPatientImagePath)) {
+            $patientImageUrl = asset('uploads/images/patients/' . $patient->patient_image);
+        } else {
+            $patientImageUrl = asset('uploads/images/default.jpg');
+        }
+    @endphp
+
+    <img id="patientPreview" src="{{ $patientImageUrl }}" class="img-thumbnail shadow"
+        style="width:220px;height:220px;object-fit:cover;" alt="{{ $patient->name }}">
 </div>
