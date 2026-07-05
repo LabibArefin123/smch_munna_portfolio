@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Patient;
 use App\Models\PatientDescriptionImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PatientController extends Controller
 {
@@ -24,6 +25,37 @@ class PatientController extends Controller
         }
 
         $patients = $patients->latest()->get();
+
+        /*
+    |--------------------------------------------------------------------------
+    | Build patient image URL for index view
+    |--------------------------------------------------------------------------
+    */
+        $patients->transform(function ($patient) {
+            $patientFolder = \Illuminate\Support\Str::slug($patient->name);
+
+            $folderImagePath = public_path(
+                'uploads/images/patients/' . $patientFolder . '/' . $patient->patient_image
+            );
+
+            $legacyImagePath = public_path(
+                'uploads/images/patients/' . $patient->patient_image
+            );
+
+            if ($patient->patient_image && file_exists($folderImagePath)) {
+                $patient->patient_image_url = asset(
+                    'uploads/images/patients/' . $patientFolder . '/' . $patient->patient_image
+                );
+            } elseif ($patient->patient_image && file_exists($legacyImagePath)) {
+                $patient->patient_image_url = asset(
+                    'uploads/images/patients/' . $patient->patient_image
+                );
+            } else {
+                $patient->patient_image_url = asset('uploads/images/default.jpg');
+            }
+
+            return $patient;
+        });
 
         return view('backend.patient_management.index', compact('patients'));
     }
@@ -88,11 +120,10 @@ class PatientController extends Controller
 
         /*
     |--------------------------------------------------------------------------
-    | Create patient folder name from patient name
+    | Create patient folder from patient name
     |--------------------------------------------------------------------------
     */
-        $patientFolder = \Illuminate\Support\Str::slug($request->name);
-
+        $patientFolder = Str::slug($request->name);
         $destination = public_path('uploads/images/patients/' . $patientFolder);
 
         if (!file_exists($destination)) {
@@ -118,9 +149,6 @@ class PatientController extends Controller
     |--------------------------------------------------------------------------
     | Create patient
     |--------------------------------------------------------------------------
-    | Save folder name too if you have a folder column.
-    | If not, just remove 'image_folder' from here.
-    |--------------------------------------------------------------------------
     */
         $patient = Patient::create([
             'name' => $request->name,
@@ -132,7 +160,6 @@ class PatientController extends Controller
             'recommended' => $request->recommended,
             'recommended_doctor' => $request->recommended_doctor,
             'recommendation_information' => $request->recommendation_information,
-            // 'image_folder' => $patientFolder, // optional if you add this column
         ]);
 
         /*
@@ -207,46 +234,50 @@ class PatientController extends Controller
 
         /*
     |--------------------------------------------------------------------------
-    | Resolve patient image folder
-    |--------------------------------------------------------------------------
-    | If old patient has no image_folder yet, create one and save it.
+    | Resolve old/new patient folders
     |--------------------------------------------------------------------------
     */
-        if (empty($patient->image_folder)) {
-            $patient->image_folder = \Illuminate\Support\Str::slug($patient->name) . '_' . $patient->id;
-        }
+        $oldFolderName = Str::slug($patient->name);
+        $newFolderName = Str::slug($request->name);
 
-        $destination = public_path('uploads/images/patients/' . $patient->image_folder);
-
-        if (!file_exists($destination)) {
-            mkdir($destination, 0755, true);
-        }
+        $oldDestination = public_path('uploads/images/patients/' . $oldFolderName);
+        $newDestination = public_path('uploads/images/patients/' . $newFolderName);
 
         /*
     |--------------------------------------------------------------------------
-    | Update Main Patient Image
+    | If patient name changed, rename folder
+    |--------------------------------------------------------------------------
+    */
+        if ($oldFolderName !== $newFolderName) {
+            if (file_exists($oldDestination) && !file_exists($newDestination)) {
+                rename($oldDestination, $newDestination);
+            } elseif (!file_exists($newDestination)) {
+                mkdir($newDestination, 0755, true);
+            }
+        } else {
+            if (!file_exists($newDestination)) {
+                mkdir($newDestination, 0755, true);
+            }
+        }
+
+        $destination = $newDestination;
+
+        /*
+    |--------------------------------------------------------------------------
+    | Update patient image
     |--------------------------------------------------------------------------
     */
         if ($request->hasFile('patient_image')) {
-            // delete old patient image from patient folder
             if (
                 $patient->patient_image &&
                 file_exists($destination . '/' . $patient->patient_image)
             ) {
                 unlink($destination . '/' . $patient->patient_image);
             }
-            // fallback: old image may still be in root patients folder
-            elseif (
-                $patient->patient_image &&
-                file_exists(public_path('uploads/images/patients/' . $patient->patient_image))
-            ) {
-                unlink(public_path('uploads/images/patients/' . $patient->patient_image));
-            }
 
             $image = $request->file('patient_image');
 
-            $patientImageName =
-                'patient_' . uniqid() . '_' . now()->format('YmdHis') . '.' . $image->getClientOriginalExtension();
+            $patientImageName = 'patient_' . uniqid() . '_' . now()->format('YmdHis') . '.' . $image->getClientOriginalExtension();
 
             $image->move($destination, $patientImageName);
 
@@ -255,7 +286,7 @@ class PatientController extends Controller
 
         /*
     |--------------------------------------------------------------------------
-    | Update Patient Basic Info
+    | Update patient info
     |--------------------------------------------------------------------------
     */
         $patient->name = $request->name;
@@ -266,13 +297,11 @@ class PatientController extends Controller
         $patient->recommended = $request->recommended;
         $patient->recommended_doctor = $request->recommended_doctor;
         $patient->recommendation_information = $request->recommendation_information;
-
-        // keep folder stable once created
         $patient->save();
 
         /*
     |--------------------------------------------------------------------------
-    | Handle Description Images (Delete old + Add new)
+    | Handle description images
     |--------------------------------------------------------------------------
     */
         $hasNewImages = $request->hasFile('description_images');
@@ -305,15 +334,10 @@ class PatientController extends Controller
 
                 foreach ($deleteIndexes as $index) {
                     if (isset($images[$index])) {
-                        $oldImageName = $images[$index];
-
-                        $oldImagePath = $destination . '/' . $oldImageName;
-                        $fallbackOldImagePath = public_path('uploads/images/patients/' . $oldImageName);
+                        $oldImagePath = $destination . '/' . $images[$index];
 
                         if (file_exists($oldImagePath)) {
                             unlink($oldImagePath);
-                        } elseif (file_exists($fallbackOldImagePath)) {
-                            unlink($fallbackOldImagePath);
                         }
 
                         unset($images[$index]);
@@ -330,8 +354,7 @@ class PatientController extends Controller
         */
             if ($hasNewImages) {
                 foreach ($request->file('description_images') as $image) {
-                    $imageName =
-                        'description_' . uniqid() . '_' . now()->format('YmdHis') . '.' . $image->getClientOriginalExtension();
+                    $imageName = 'description_' . uniqid() . '_' . now()->format('YmdHis') . '.' . $image->getClientOriginalExtension();
 
                     $image->move($destination, $imageName);
 
@@ -348,7 +371,7 @@ class PatientController extends Controller
             ->route('patients.index')
             ->with('success', 'Patient updated successfully.');
     }
-    
+
     public function destroy(Patient $patient)
     {
         $destination = public_path('uploads/images/patients');
